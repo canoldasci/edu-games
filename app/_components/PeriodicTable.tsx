@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { elements } from "../../constants/index";
 import { Element } from "../../types/index";
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
