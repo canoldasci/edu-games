@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Shadcn Button bileşeni
 import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card bileşeni
 import { Level, Item, Target } from "../../types/index";

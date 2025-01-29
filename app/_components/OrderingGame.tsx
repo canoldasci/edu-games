@@ -4,17 +4,16 @@ import { shuffleArray } from "@/utils"; // shuffleArray fonksiyonunu içe aktar
 import { useState } from "react";
 import { Button } from "@/components/ui/button"; // Shadcn Button'ı içe aktar
 import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card'ı içe aktar
-import { atomicTheories } from "../../constants/orderingGameDataSets"; // Veri setini içe aktar
 import { Item } from "../../types/index"; // Veri türlerini içe aktar
 
 interface DragDropGamePageProps {
   Items: Item[];
 }
 
-const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
+const OrderinGame = ({ Items }: DragDropGamePageProps) => {
   const [draggableItems, setDraggableItems] = useState<Item[]>([]); // Başlangıçta boş array
   const [orderedItems, setOrderedItems] = useState<(Item | null)[]>(
-    Array(atomicTheories.length).fill(null)
+    Array(Items.length).fill(null)
   );
   const [resultsChecked, setResultsChecked] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
@@ -24,8 +23,8 @@ const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
   };
   useEffect(() => {
     // Sadece istemci tarafında sıralama işlemi yapılacak
-    setDraggableItems(shuffleArray(atomicTheories));
-  }, [atomicTheories]); // currentLevel.items değiştiğinde tekrar çalışır
+    setDraggableItems(shuffleArray(Items));
+  }, [Items]); // currentLevel.items değiştiğinde tekrar çalışır
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     e.preventDefault();
@@ -51,20 +50,18 @@ const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
   const handleShowCorrect = () => {
     setShowCorrect(true);
     // Sıralı listeyi doğru sırayla ayarla
-    setOrderedItems([...atomicTheories]);
+    setOrderedItems([...Items]);
   };
 
   const handleReplay = () => {
-    setDraggableItems(atomicTheories); // Sürüklenebilir öğeleri sıfırla
-    setOrderedItems(Array(atomicTheories.length).fill(null)); // Sıralı listeyi sıfırla
+    setDraggableItems(Items); // Sürüklenebilir öğeleri sıfırla
+    setOrderedItems(Array(Items.length).fill(null)); // Sıralı listeyi sıfırla
     setResultsChecked(false); // Sonuçları sıfırla
     setShowCorrect(false); // Doğruyu gösteri sıfırla
   };
 
   const isCorrectOrder = () => {
-    return orderedItems.every(
-      (item, index) => item?.id === atomicTheories[index].id
-    );
+    return orderedItems.every((item, index) => item?.id === Items[index].id);
   };
 
   return (
@@ -102,7 +99,7 @@ const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
                   onDragOver={handleDragOver}
                   className={`p-4 flex items-start gap-4 rounded-lg ${
                     resultsChecked
-                      ? item?.id === atomicTheories[index].id
+                      ? item?.id === Items[index].id
                         ? "bg-green-200"
                         : "bg-red-200"
                       : "bg-gray-200"
@@ -168,4 +165,4 @@ const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
   );
 };
 
-export default AtomicTheoriesOrderingGame;
+export default OrderinGame;
