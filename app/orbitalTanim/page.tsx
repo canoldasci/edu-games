@@ -1,13 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogTrigger,
   DialogContent,
   DialogTitle,
-  DialogDescription,
 } from "../../components/ui/dialog";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -117,7 +116,7 @@ const OrbitalsInfo = () => {
                     <div className="text-lg font-semibold">{orbital.name}</div>
                   </div>
                 </DialogTrigger>
-                <DialogContent className="max-w-[95vw] max-h-[75vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
+                <DialogContent className="max-w-[95vw] max-h-[750vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
                   <DialogTitle className="text-2xl font-bold text-center mb-4">
                     {orbital.name}
                   </DialogTitle>

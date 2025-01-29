@@ -41,9 +41,15 @@ export default function Home() {
           </a>
           <a
             href="https://edu-games-three.vercel.app/periyodikTablo"
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-gradient-to-r from-sky-600 to-emerald-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
             Periyodik Tablo (hazırlanıyor...)
+          </a>
+          <a
+            href="https://edu-games-three.vercel.app/orbitalTanim"
+            className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+          >
+            Orbital Tanımları (hazırlanıyor...)
           </a>
         </div>
       </main>
