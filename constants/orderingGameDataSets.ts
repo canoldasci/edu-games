@@ -1,44 +1,87 @@
-export interface Item {
-  id: string;
-  name: string;
-  description: string; // Optional: Add a description for each theory
-}
-
+import { Item } from "../types";
 export const atomicTheories: Item[] = [
   {
     id: "1",
-    name: "Democritus' Atomic Theory",
+    name: "Demokritos'un Atom Teorisi",
     description:
-      "Proposed that matter is composed of indivisible particles called 'atomos'.",
+      "Maddenin 'atomos' adı verilen bölünemez parçacıklardan oluştuğunu öne sürmüştür.",
   },
   {
     id: "2",
-    name: "Dalton's Atomic Theory",
+    name: "Dalton'un Atom Teorisi",
     description:
-      "Introduced the idea that atoms are indivisible and combine in fixed ratios.",
+      "Atomların bölünemez olduğunu ve sabit oranlarda birleştiğini ileri sürmüştür.",
   },
   {
     id: "3",
-    name: "Thomson's Plum Pudding Model",
+    name: "Thomson'un Üzümlü Kek Modeli",
     description:
-      "Suggested that atoms are made of positively charged matter with electrons embedded in it.",
+      "Atomların pozitif yüklü bir madde içinde gömülü elektronlardan oluştuğunu önermiştir.",
   },
   {
     id: "4",
-    name: "Rutherford's Nuclear Model",
+    name: "Rutherford'un Nükleer Modeli",
     description:
-      "Discovered the nucleus and proposed that atoms are mostly empty space.",
+      "Çekirdeği keşfetmiş ve atomların çoğunlukla boşluktan oluştuğunu öne sürmüştür.",
   },
   {
     id: "5",
-    name: "Bohr's Planetary Model",
+    name: "Bohr'un Gezegen Modeli",
     description:
-      "Introduced the idea of electrons orbiting the nucleus in fixed energy levels.",
+      "Elektronların çekirdek etrafında sabit enerji seviyelerinde döndüğünü öne sürmüştür.",
   },
   {
     id: "6",
-    name: "Quantum Mechanical Model",
+    name: "Kuantum Mekanik Modeli",
     description:
-      "Describes electrons as existing in probability clouds rather than fixed orbits.",
+      "Elektronları sabit yörüngeler yerine olasılık bulutlarında var olan parçacıklar olarak tanımlar.",
+  },
+];
+export const orbitalEnergies: Item[] = [
+  {
+    id: "1",
+    name: "1s Orbitali",
+    description: "Atomda en düşük enerjiye sahip olan orbital.",
+  },
+  {
+    id: "2",
+    name: "2s Orbitali",
+    description:
+      "1s orbitalinden sonra gelen, biraz daha yüksek enerjiye sahip orbital.",
+  },
+  {
+    id: "3",
+    name: "2p Orbitalleri",
+    description:
+      "2s orbitalinden daha yüksek enerjiye sahip, üç farklı yönelimde bulunan orbitaller.",
+  },
+  {
+    id: "4",
+    name: "3s Orbitali",
+    description: "2p orbitalinden daha yüksek enerjiye sahip olan s orbitali.",
+  },
+  {
+    id: "5",
+    name: "3p Orbitalleri",
+    description:
+      "3s orbitalinden daha yüksek enerjiye sahip olan p orbitalleri.",
+  },
+  {
+    id: "6",
+    name: "4s Orbitali",
+    description:
+      "Enerji açısından 3p orbitalinden sonra gelir ve dolma sırasına göre önce doldurulur.",
+  },
+  {
+    id: "7",
+    name: "3d Orbitalleri",
+    description:
+      "4s orbitalinden daha yüksek enerjiye sahip, beş farklı yönelimde bulunan orbitaller.",
+  },
+  {
+    id: "8",
+    name: "4p Orbitalleri",
+    description:
+      "3d orbitalinden daha yüksek enerjiye sahip olan p orbitalleri.",
   },
 ];

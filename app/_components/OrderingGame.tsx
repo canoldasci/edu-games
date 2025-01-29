@@ -1,12 +1,18 @@
 "use client";
-
+import { useEffect } from "react";
+import { shuffleArray } from "@/utils"; // shuffleArray fonksiyonunu içe aktar
 import { useState } from "react";
-import { Button } from "@/components/ui/button"; // Import shadcn Button
-import { Card, CardContent } from "@/components/ui/card"; // Import shadcn Card
-import { atomicTheories, Item } from "../../../constants/orderingGameDataSets"; // Import dataset
+import { Button } from "@/components/ui/button"; // Shadcn Button'ı içe aktar
+import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card'ı içe aktar
+import { atomicTheories } from "../../constants/orderingGameDataSets"; // Veri setini içe aktar
+import { Item } from "../../types/index"; // Veri türlerini içe aktar
 
-const AtomicTheoriesOrderingGame = () => {
-  const [draggableItems, setDraggableItems] = useState<Item[]>(atomicTheories);
+interface DragDropGamePageProps {
+  Items: Item[];
+}
+
+const AtomicTheoriesOrderingGame = ({ Items }: DragDropGamePageProps) => {
+  const [draggableItems, setDraggableItems] = useState<Item[]>([]); // Başlangıçta boş array
   const [orderedItems, setOrderedItems] = useState<(Item | null)[]>(
     Array(atomicTheories.length).fill(null)
   );
@@ -16,15 +22,19 @@ const AtomicTheoriesOrderingGame = () => {
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, item: Item) => {
     e.dataTransfer.setData("text/plain", JSON.stringify(item));
   };
+  useEffect(() => {
+    // Sadece istemci tarafında sıralama işlemi yapılacak
+    setDraggableItems(shuffleArray(atomicTheories));
+  }, [atomicTheories]); // currentLevel.items değiştiğinde tekrar çalışır
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     e.preventDefault();
     const item = JSON.parse(e.dataTransfer.getData("text/plain")) as Item;
 
-    // Remove the item from the draggable items list
+    // Sürüklenebilir öğeyi listeden çıkar
     setDraggableItems((prevItems) => prevItems.filter((i) => i.id !== item.id));
 
-    // Add the item to the ordered list at the specified index
+    // Öğeyi, belirtilen indekste sıralı listeye ekle
     const newOrderedItems = [...orderedItems];
     newOrderedItems[index] = item;
     setOrderedItems(newOrderedItems);
@@ -40,15 +50,15 @@ const AtomicTheoriesOrderingGame = () => {
 
   const handleShowCorrect = () => {
     setShowCorrect(true);
-    // Set the ordered list to the correct order
+    // Sıralı listeyi doğru sırayla ayarla
     setOrderedItems([...atomicTheories]);
   };
 
   const handleReplay = () => {
-    setDraggableItems(atomicTheories); // Reset draggable items
-    setOrderedItems(Array(atomicTheories.length).fill(null)); // Reset ordered list
-    setResultsChecked(false); // Reset results checked
-    setShowCorrect(false); // Reset show correct
+    setDraggableItems(atomicTheories); // Sürüklenebilir öğeleri sıfırla
+    setOrderedItems(Array(atomicTheories.length).fill(null)); // Sıralı listeyi sıfırla
+    setResultsChecked(false); // Sonuçları sıfırla
+    setShowCorrect(false); // Doğruyu gösteri sıfırla
   };
 
   const isCorrectOrder = () => {
@@ -61,9 +71,9 @@ const AtomicTheoriesOrderingGame = () => {
     <Card className="p-6 max-w-6xl mx-auto mt-10">
       <CardContent>
         <div className="grid grid-cols-2 gap-8">
-          {/* Left Column: Draggable Theory Cards */}
+          {/* Sol Kolon: Sürüklenebilir Teori Kartları */}
           <div>
-            <h2 className="text-lg font-bold mb-4">Theories</h2>
+            <h2 className="text-lg font-bold mb-4">Teoriler</h2>
             <div className="space-y-4">
               {draggableItems.map((item) => (
                 <Card
@@ -81,9 +91,9 @@ const AtomicTheoriesOrderingGame = () => {
             </div>
           </div>
 
-          {/* Right Column: Numbered Drop Areas */}
+          {/* Sağ Kolon: Numaralı Drop Alanları */}
           <div>
-            <h2 className="text-lg font-bold mb-4">Order the Theories</h2>
+            <h2 className="text-lg font-bold mb-4">Teorileri Sıralayın</h2>
             <div className="space-y-4">
               {orderedItems.map((item, index) => (
                 <Card
@@ -110,7 +120,9 @@ const AtomicTheoriesOrderingGame = () => {
                         </div>
                       </>
                     ) : (
-                      <div className="text-gray-500">Drop theory here</div>
+                      <div className="text-gray-500">
+                        Teoriyi buraya bırakın
+                      </div>
                     )}
                   </div>
                 </Card>
@@ -119,7 +131,7 @@ const AtomicTheoriesOrderingGame = () => {
           </div>
         </div>
 
-        {/* Button */}
+        {/* Buton */}
         <div className="mt-8">
           <Button
             onClick={
@@ -132,20 +144,22 @@ const AtomicTheoriesOrderingGame = () => {
             className="w-full"
           >
             {showCorrect
-              ? "Replay"
+              ? "Yeniden Oyna"
               : resultsChecked
-              ? "Show Correct"
-              : "Check Results"}
+              ? "Doğruyu Göster"
+              : "Sonuçları Kontrol Et"}
           </Button>
         </div>
 
-        {/* Result Message */}
+        {/* Sonuç Mesajı */}
         {resultsChecked && !showCorrect && (
           <div className="mt-4 text-center">
             {isCorrectOrder() ? (
-              <p className="text-green-600">Correct order! 🎉</p>
+              <p className="text-green-600">Doğru sıralama! 🎉</p>
             ) : (
-              <p className="text-red-600">Incorrect order. Try again! ❌</p>
+              <p className="text-red-600">
+                Yanlış sıralama. Tekrar deneyin! ❌
+              </p>
             )}
           </div>
         )}
