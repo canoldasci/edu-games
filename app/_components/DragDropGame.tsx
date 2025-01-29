@@ -49,13 +49,19 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
     e.preventDefault();
     const item = JSON.parse(e.dataTransfer.getData("text/plain")) as Item;
 
-    // Sürüklenebilir öğeyi listeden kaldır
-    setDraggableItems((prevItems) => prevItems.filter((i) => i.id !== item.id));
+    // Hedef kutusunda zaten bir öğe varsa, eski öğeyi kaldır
+    const existingItem = targetStates[index].item;
+    if (existingItem) {
+      setDraggableItems((prevItems) => [...prevItems, existingItem]); // Eski öğeyi tekrar sürüklenebilir öğelere ekle
+    }
 
     // Öğeyi hedef kutusuna ekle
     const newTargetStates = [...targetStates];
     newTargetStates[index].item = item;
     setTargetStates(newTargetStates);
+
+    // Sürüklenebilir öğe listesinden yeni öğeyi çıkar
+    setDraggableItems((prevItems) => prevItems.filter((i) => i.id !== item.id));
   };
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {

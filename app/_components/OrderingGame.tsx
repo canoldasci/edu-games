@@ -4,6 +4,7 @@ import { shuffleArray } from "@/utils"; // shuffleArray fonksiyonunu içe aktar
 import { useState } from "react";
 import { Button } from "@/components/ui/button"; // Shadcn Button'ı içe aktar
 import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card'ı içe aktar
+
 import { Item } from "../../types/index"; // Veri türlerini içe aktar
 
 interface DragDropGamePageProps {
