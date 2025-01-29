@@ -17,3 +17,15 @@ export interface Level {
   items: Item[];
   targets: Target[];
 }
+
+export interface Element {
+  atomicNumber: number;
+  symbol: string;
+  name: string;
+  category: string;
+  atomicMass: string;
+  electronConfiguration: string;
+  discoveredYear: string;
+  group: number; // Grup numarası (1-18)
+  period: number; // Periyot numarası (1-7)
+}

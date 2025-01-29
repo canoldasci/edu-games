@@ -39,6 +39,12 @@ export default function Home() {
           >
             Piktogram
           </a>
+          <a
+            href="https://edu-games-three.vercel.app/periyodikTablo"
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+          >
+            Periyodik Tablo (hazırlanıyor...)
+          </a>
         </div>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6"></footer>
