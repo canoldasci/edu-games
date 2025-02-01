@@ -11,21 +11,22 @@ interface DragDropGamePageProps {
   Items: Item[];
 }
 
-const OrderinGame = ({ Items }: DragDropGamePageProps) => {
-  const [draggableItems, setDraggableItems] = useState<Item[]>([]); // Başlangıçta boş array
+const OrderingGame = ({ Items }: DragDropGamePageProps) => {
+  const initialItems = shuffleArray([...Items]); // Başlangıçta sıralı olmayan bir kopya oluştur
+  const [draggableItems, setDraggableItems] = useState<Item[]>([]);
   const [orderedItems, setOrderedItems] = useState<(Item | null)[]>(
     Array(Items.length).fill(null)
   );
   const [resultsChecked, setResultsChecked] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
 
+  useEffect(() => {
+    setDraggableItems(initialItems); // Client-side çalıştır, SSR sorun çıkarmaz
+  }, [Items]);
+
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, item: Item) => {
     e.dataTransfer.setData("text/plain", JSON.stringify(item));
   };
-  useEffect(() => {
-    // Sadece istemci tarafında sıralama işlemi yapılacak
-    setDraggableItems(shuffleArray(Items));
-  }, [Items]); // currentLevel.items değiştiğinde tekrar çalışır
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>, index: number) => {
     e.preventDefault();
@@ -55,7 +56,7 @@ const OrderinGame = ({ Items }: DragDropGamePageProps) => {
   };
 
   const handleReplay = () => {
-    setDraggableItems(Items); // Sürüklenebilir öğeleri sıfırla
+    setDraggableItems(initialItems); // Sürüklenebilir öğeleri sıfırla
     setOrderedItems(Array(Items.length).fill(null)); // Sıralı listeyi sıfırla
     setResultsChecked(false); // Sonuçları sıfırla
     setShowCorrect(false); // Doğruyu gösteri sıfırla
@@ -166,4 +167,4 @@ const OrderinGame = ({ Items }: DragDropGamePageProps) => {
   );
 };
 
-export default OrderinGame;
+export default OrderingGame;

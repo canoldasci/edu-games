@@ -4,7 +4,7 @@ import { Level, Element } from "../types/index";
 export const gunlukKimya: Level[] = [
   {
     level: 1,
-    timeLimit: 50,
+    timeLimit: 10,
     items: [
       { id: "1", name: "Sabun (Sodyum Stearat)" },
       { id: "2", name: "İyot" },

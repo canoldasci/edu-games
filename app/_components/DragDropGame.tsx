@@ -25,10 +25,20 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
+  const handleLevel = (level: Level) => {
+    setCurrentLevel({ ...level });
+    // setDraggableItems(level.items);
+    setTargetStates(
+      level.targets.map((target: Target) => ({ target, item: null }))
+    );
+    setTimeLeft(level.timeLimit);
+  };
+
   useEffect(() => {
-    // Sadece istemci tarafında sıralama işlemi yapılacak
-    setDraggableItems(shuffleArray(currentLevel.items));
-  }, [currentLevel.items]); // currentLevel.items değiştiğinde tekrar çalışır
+    const currentLevelItems = shuffleArray([...currentLevel.items]);
+    setDraggableItems(currentLevelItems);
+    console.log("currentLevelItems", currentLevelItems);
+  }, [currentLevel]); // currentLevel değiştiğinde tekrar çalışır
 
   useEffect(() => {
     if (timeLeft > 0 && !resultsChecked && !gameOver) {
@@ -106,12 +116,7 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
       (level) => level.level === currentLevel.level + 1
     );
     if (nextLevel) {
-      setCurrentLevel(nextLevel);
-      setDraggableItems(nextLevel.items);
-      setTargetStates(
-        nextLevel.targets.map((target) => ({ target, item: null }))
-      );
-      setTimeLeft(nextLevel.timeLimit);
+      handleLevel(nextLevel);
       setResultsChecked(false);
       setShowCorrect(false);
       setGameOver(false);
@@ -122,18 +127,9 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
 
   const handleReplay = () => {
     if (timeLeft !== 0) {
-      setCurrentLevel(levels[0]);
-      setDraggableItems(levels[0].items);
-      setTargetStates(
-        levels[0].targets.map((target) => ({ target, item: null }))
-      );
-      setTimeLeft(levels[0].timeLimit);
+      handleLevel(levels[0]);
     } else {
-      setDraggableItems(currentLevel.items);
-      setTargetStates(
-        currentLevel.targets.map((target) => ({ target, item: null }))
-      );
-      setTimeLeft(currentLevel.timeLimit);
+      handleLevel(currentLevel);
     }
     setResultsChecked(false);
     setShowCorrect(false);
@@ -183,7 +179,7 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
               key={state.target.id}
               onDrop={(e) => handleDrop(e, index)}
               onDragOver={handleDragOver}
-              className={`p-4 h-20 flex items-center justify-center rounded-lg ${
+              className={`p-4 min-h-20 flex flex-col items-center justify-center rounded-lg ${
                 resultsChecked
                   ? state.item?.id === state.target.correctItemId
                     ? "bg-green-200"
