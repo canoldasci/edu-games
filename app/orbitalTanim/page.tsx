@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -13,6 +13,8 @@ import {
   DialogTrigger,
   DialogContent,
   DialogTitle,
+  DialogFooter,
+  DialogClose,
 } from "../../components/ui/dialog";
 import Image from "next/image";
 
@@ -77,11 +79,11 @@ const orbitalsData = [
 ];
 
 const OrbitalsInfo = () => {
-  const [selectedOrbital, setSelectedOrbital] = useState<null | {
-    name: string;
-    description: string;
-    image: string;
-  }>(null);
+  // const [selectedOrbital, setSelectedOrbital] = useState<null | {
+  //   name: string;
+  //   description: string;
+  //   image: string;
+  // }>(null);
 
   return (
     <div className="max-w-4xl mx-auto p-6 mt-10">
@@ -133,13 +135,13 @@ const OrbitalsInfo = () => {
             className="p-4 cursor-pointer bg-blue-100 hover:bg-blue-200 transition-colors"
           >
             <Dialog>
-              <DialogTrigger asChild>
+              <DialogTrigger>
                 <div className="text-center flex flex-col justify-center items-center h-100">
                   <Image
                     src={orbital.image}
                     alt={orbital.name}
-                    width={100}
-                    height={100}
+                    width={300}
+                    height={700}
                     className="mx-auto"
                   />
                   <div className="text-lg font-semibold">{orbital.name}</div>
@@ -193,14 +195,11 @@ const OrbitalsInfo = () => {
                     </ul>
                   </div>
                 </div>
-
-                {/* Close Button */}
-                <Button
-                  onClick={() => setSelectedOrbital(null)}
-                  className="mt-4 w-full sm:w-auto"
-                >
-                  Kapat
-                </Button>
+                <DialogFooter className="sm:justify-start">
+                  <DialogClose asChild>
+                    <Button type="button">Close</Button>
+                  </DialogClose>
+                </DialogFooter>
               </DialogContent>
             </Dialog>
           </Card>
