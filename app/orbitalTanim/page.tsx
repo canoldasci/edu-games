@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,34 +15,64 @@ import {
   DialogTitle,
 } from "../../components/ui/dialog";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 
 // Örnek orbital verisi
 const orbitalsData = [
   {
     id: "s",
     name: "S Orbital",
-    description: "S orbital, 1 elektron kabuğuna sahip en basit orbittir.",
-    image: "/s_orbital.svg",
+    shape:
+      "Küresel simetrik bir yapıya sahiptir. Elektronlar çekirdek etrafında eşit olasılıkla bulunabilir.",
+    energyLevels:
+      "Her enerji seviyesinde bir adet s orbitali bulunur (örneğin 1s, 2s, 3s…).",
+    electronCapacity: "Her bir s orbitali en fazla 2 elektron barındırabilir.",
+    specialties: [
+      "Çekirdeğe en yakın orbitaldir (1s).",
+      "Elektron yoğunluğu çekirdek etrafında maksimumdur.",
+    ],
+    image: "/s-orbital.jpeg",
   },
   {
     id: "p",
-    name: "P Orbital",
-    description:
-      "P orbital, 3 farklı yönde uzanabilir ve 6 elektrona sahiptir.",
-    image: "/images/p_orbital.svg",
+    name: "P Orbitalleri",
+    shape:
+      "Çift loblu ve dambıl (halter) şeklindedir. Loblar arasında nodal bir düzlem bulunur (elektronun bulunma ihtimali sıfır olan bölge).",
+    energyLevels: "2. enerji seviyesinden itibaren bulunur (2p, 3p, 4p…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 3 farklı p orbitali (px, py, pz) vardır ve her biri 2 elektron alabilir. Toplamda 6 elektron taşır.",
+    specialties: [
+      "p orbitalleri x, y ve z eksenlerinde yerleşir.",
+      "Şekilleri ve yönelimleri, kimyasal bağ oluşumunda büyük rol oynar (örneğin kovalent bağlarda).",
+    ],
+    image: "/p-orbitals.jpeg",
   },
   {
     id: "d",
-    name: "D Orbital",
-    description: "D orbital, 5 farklı yönü vardır ve 10 elektrona sahiptir.",
-    image: "/images/d_orbital.svg",
+    name: "D Orbitalleri",
+    shape:
+      "Daha karmaşık bir yapıdadır. Çoğunlukla yonca yaprağına benzer şekiller gösterir. (Bazıları halkalıdır, örn: dz²).",
+    energyLevels: "3. enerji seviyesinden itibaren bulunur (3d, 4d, 5d…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 5 farklı d orbitali bulunur ve her biri 2 elektron alabilir. Toplamda 10 elektron taşır.",
+    specialties: [
+      "d orbitalleri geçiş metalleri gibi elementlerin kimyasal özelliklerini ve renklerini belirler.",
+      "d orbitallerindeki elektronlar genellikle metal komplekslerinde bağ yapımında rol oynar.",
+    ],
+    image: "/d-orbitals.jpeg",
   },
   {
     id: "f",
     name: "F Orbital",
-    description: "F orbital, 7 farklı yönü vardır ve 14 elektrona sahiptir.",
-    image: "/images/f_orbital.svg",
+    shape:
+      "Çok daha karmaşık ve simetrik olmayan bir yapıya sahiptir. Şekillerini görselleştirmek zordur.",
+    energyLevels: "4. enerji seviyesinden itibaren bulunur (4f, 5f…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 7 farklı f orbitali bulunur ve her biri 2 elektron alabilir. Toplamda 14 elektron taşır.",
+    specialties: [
+      "f orbitalleri lantanidler ve aktinitler gibi elementlerde görülür.",
+      "Elektronların f orbitallerine yerleşimi, bu elementlerin manyetik ve kimyasal özelliklerini etkiler.",
+    ],
+    image: "/f-orbitals.jpeg",
   },
 ];
 
@@ -49,168 +85,138 @@ const OrbitalsInfo = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 mt-10">
-      <section className="text-center mb-12">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-semibold text-primary-200"
-        >
-          Elektron Orbitalleri: Keşfet, Öğren
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 text-lg text-content-300"
-        >
-          Amaç: Öğrencilerin orbitallerin şekilleri, özellikleri ve kapasiteleri
-          hakkında bilgi edinmesi.
-        </motion.p>
-      </section>
-      <section className="text-content-300 mt-8">
-        <ul className="list-disc pl-6 space-y-4">
-          <li>
-            <strong>Orbital</strong>, bir elektronun bir atom çevresinde bulunma
-            olasılığının en yüksek olduğu bölgeleri tanımlar.
-          </li>
-          <li>
-            Kuantum mekaniğinde, orbitaller şekil, enerji seviyesi ve kapasite
-            bakımından farklılık gösterir.
-          </li>
-          <li>
-            Baş kuantum sayısı <strong>(n)</strong> orbitallerin enerji
-            seviyelerini ve büyüklüğünü belirlerken, yan kuantum sayısı{" "}
-            <strong>(l)</strong> orbitallerin şekillerini belirler.
-          </li>
-          <li>
-            <strong>s</strong>, <strong>p</strong> ve <strong>d</strong>{" "}
-            orbitalleri, atomların elektronlarının bulunduğu enerji
-            seviyelerinde yer alan ve belirli şekillere sahip olan bölgelerdir.
-          </li>
-          <li>
-            Bu orbitallerin her birinin özellikleri, elektronu yerleştirme ve
-            atomun kimyasal özelliklerini anlama açısından oldukça önemlidir.
-          </li>
-        </ul>
-      </section>
+      <Card>
+        <CardHeader className="my-5">
+          <CardTitle className="text-3xl">
+            Elektron Orbitalleri: Keşfet, Öğren
+          </CardTitle>
+          <CardDescription className="text-lg font-semibold text-emerald-700">
+            Amaç: Öğrencilerin orbitallerin şekilleri, özellikleri ve
+            kapasiteleri hakkında bilgi edinmesi.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-6 space-y-4">
+            <li>
+              <strong>Orbital</strong>, bir elektronun bir atom çevresinde
+              bulunma olasılığının en yüksek olduğu bölgeleri tanımlar.
+            </li>
+            <li>
+              Kuantum mekaniğinde, orbitaller{" "}
+              <strong>şekil, enerji seviyesi ve kapasite</strong>
+              bakımından farklılık gösterir.
+            </li>
+            <li>
+              <strong>Baş kuantum sayısı (n)</strong> orbitallerin enerji
+              seviyelerini ve büyüklüğünü belirlerken,{" "}
+              <strong> yan kuantum sayısı (l)</strong> orbitallerin şekillerini
+              belirler.
+            </li>
+            <li>
+              <strong>s</strong>, <strong>p</strong> ve <strong>d</strong>{" "}
+              orbitalleri, atomların elektronlarının bulunduğu enerji
+              seviyelerinde yer alan ve belirli şekillere sahip olan
+              bölgelerdir.
+            </li>
+            <li>
+              Bu orbitallerin her birinin özellikleri, elektronu yerleştirme ve
+              atomun kimyasal özelliklerini anlama açısından oldukça önemlidir.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-5">
         {orbitalsData.map((orbital) => (
-          <motion.div
+          <Card
             key={orbital.id}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="p-4 cursor-pointer bg-blue-100 hover:bg-blue-200 transition-colors"
           >
-            <Card className="p-4 cursor-pointer bg-blue-100 hover:bg-blue-200 transition-colors">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <div className="text-center">
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="text-center flex flex-col justify-center items-center h-100">
+                  <Image
+                    src={orbital.image}
+                    alt={orbital.name}
+                    width={100}
+                    height={100}
+                    className="mx-auto"
+                  />
+                  <div className="text-lg font-semibold">{orbital.name}</div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-[95vw] max-h-[750vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
+                <DialogTitle className="text-2xl font-bold text-center mb-4">
+                  {orbital.name}
+                </DialogTitle>
+                <div className="space-y-4">
+                  {/* Image Section */}
+                  <div className="flex justify-center">
                     <Image
                       src={orbital.image}
                       alt={orbital.name}
-                      width={100}
-                      height={100}
-                      className="mx-auto"
+                      width={200}
+                      height={200}
+                      className="rounded-lg"
                     />
-                    <div className="text-lg font-semibold">{orbital.name}</div>
-                  </div>
-                </DialogTrigger>
-                <DialogContent className="max-w-[95vw] max-h-[750vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
-                  <DialogTitle className="text-2xl font-bold text-center mb-4">
-                    {orbital.name}
-                  </DialogTitle>
-                  <div className="space-y-4">
-                    {/* Image Section */}
-                    <div className="flex justify-center">
-                      <Image
-                        src={orbital.image}
-                        alt={orbital.name}
-                        width={200}
-                        height={200}
-                        className="rounded-lg"
-                      />
-                    </div>
-
-                    {/* Shape Section */}
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">Şekil:</h3>
-                      <p>
-                        Küresel simetrik bir yapıya sahiptir. Elektronlar
-                        çekirdek etrafında eşit olasılıkla bulunabilir.
-                      </p>
-                    </div>
-
-                    {/* Energy Levels Section */}
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">
-                        Bulunduğu Enerji Seviyeleri:
-                      </h3>
-                      <p>
-                        Her enerji seviyesinde bir adet s orbitali bulunur
-                        (örneğin 1s, 2s, 3s…).
-                      </p>
-                    </div>
-
-                    {/* Electron Capacity Section */}
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">
-                        Elektron Kapasitesi:
-                      </h3>
-                      <p>
-                        Her bir s orbitali en fazla 2 elektron barındırabilir.
-                      </p>
-                    </div>
-
-                    {/* Properties Section */}
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold">Özellikler:</h3>
-                      <ul className="list-disc pl-6 space-y-1">
-                        <li>Çekirdeğe en yakın orbitaldir (1s).</li>
-                        <li>
-                          Elektron yoğunluğu çekirdek etrafında maksimumdur.
-                        </li>
-                      </ul>
-                    </div>
                   </div>
 
-                  {/* Close Button */}
-                  <Button
-                    onClick={() => setSelectedOrbital(null)}
-                    className="mt-4 w-full sm:w-auto"
-                  >
-                    Kapat
-                  </Button>
-                </DialogContent>
-              </Dialog>
-            </Card>
-          </motion.div>
+                  {/* Shape Section */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Şekil:</h3>
+                    <p>{orbital.shape}</p>
+                  </div>
+
+                  {/* Energy Levels Section */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">
+                      Bulunduğu Enerji Seviyeleri:
+                    </h3>
+                    <p>{orbital.energyLevels}</p>
+                  </div>
+
+                  {/* Electron Capacity Section */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">
+                      Elektron Kapasitesi:
+                    </h3>
+                    <p>{orbital.electronCapacity}</p>
+                  </div>
+
+                  {/* Properties Section */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold">Özellikler:</h3>
+                    <ul className="list-disc pl-6 space-y-1">
+                      {orbital.specialties.map((specialty, index) => (
+                        <li key={index}>{specialty}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Close Button */}
+                <Button
+                  onClick={() => setSelectedOrbital(null)}
+                  className="mt-4 w-full sm:w-auto"
+                >
+                  Kapat
+                </Button>
+              </DialogContent>
+            </Dialog>
+          </Card>
         ))}
       </div>
-
-      <AnimatePresence>
-        {selectedOrbital && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-          >
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              className="bg-white p-6 rounded-lg max-w-sm"
-            >
-              <h2 className="text-xl font-bold">{selectedOrbital.name}</h2>
-              <p className="mt-2">{selectedOrbital.description}</p>
-              <Button onClick={() => setSelectedOrbital(null)} className="mt-4">
-                Kapat
-              </Button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* {selectedOrbital && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg max-w-sm">
+            <h2 className="text-xl font-bold">HELLO</h2>
+            <p className="mt-2">{selectedOrbital.description}</p>
+            <Button onClick={() => setSelectedOrbital(null)} className="mt-4">
+              Kapat
+            </Button>
+          </div>
+        </div>
+      )} */}
     </div>
   );
 };
