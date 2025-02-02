@@ -43,13 +43,19 @@ export default function Home() {
             href="https://edu-games-three.vercel.app/periyodikTablo"
             className="px-6 py-3 bg-gradient-to-r from-sky-600 to-emerald-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
-            Periyodik Tablo (hazırlanıyor...)
+            Periyodik Tablo
           </a>
           <a
             href="https://edu-games-three.vercel.app/orbitalTanim"
             className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
-            Orbital Tanımları (hazırlanıyor...)
+            Orbital Tanımları
+          </a>
+          <a
+            href="https://edu-games-three.vercel.app/benzetim"
+            className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+          >
+            Benzetim Simülasyon
           </a>
         </div>
       </main>

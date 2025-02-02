@@ -24,7 +24,8 @@ import {
 const liquids = [
   { id: "water", name: "Su" },
   { id: "ethanol", name: "Etanol" },
-  { id: "acetone", name: "Aseton" },
+  { id: "ether", name: "Eter" },
+  { id: "mercury", name: "Cıva" },
 ];
 
 const Home = () => {
@@ -34,11 +35,12 @@ const Home = () => {
   const [interactionStrength, setInteractionStrength] = useState(1);
 
   const calculateVaporPressure = (x: number) => {
-    // Basit bir buhar basıncı hesaplama formülü (örnek amaçlıdır)
+    // Sıvıya göre buhar basıncı hesaplama
     const basePressure = {
       water: 23.8,
       ethanol: 59.0,
-      acetone: 229.5,
+      ether: 35.0, // Eter için bir değer örneği
+      mercury: 1700.0, // Cıva için bir değer örneği
     }[selectedLiquid];
 
     return (
@@ -68,7 +70,6 @@ const Home = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                {/* <SelectLabel>Fruits</SelectLabel> */}
                 {liquids.map((liquid) => (
                   <SelectItem key={liquid.id} value={liquid.id}>
                     {liquid.name}
