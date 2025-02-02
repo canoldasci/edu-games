@@ -17,6 +17,7 @@ export interface ElementData {
   ionizationEnergy: string;
   bonding: string;
   position: number;
+  category?: string;
 }
 
 export const elements: ElementData[] = [
@@ -39,6 +40,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1312 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar, iyonik bağlar da oluşturabilir.",
     position: 1,
+    category: "alkali metal", // Hidrojen özel bir durum, ancak alkali metal olarak kabul edilebilir
   },
   {
     name: "Helyum",
@@ -59,6 +61,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "2372 kJ/mol",
     bonding: "İnert, kimyasal bağ oluşturmaz.",
     position: 18,
+    category: "soygaz",
   },
   {
     name: "Lityum",
@@ -79,6 +82,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "520 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 1,
+    category: "alkali metal",
   },
   {
     name: "Berilyum",
@@ -99,6 +103,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "899 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 2,
+    category: "toprak alkali metal",
   },
   {
     name: "Bor",
@@ -119,6 +124,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "800.6 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 13,
+    category: "bor grubu",
   },
   {
     name: "Karbon",
@@ -139,6 +145,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1086.5 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 14,
+    category: "karbon grubu",
   },
   {
     name: "Azot",
@@ -159,6 +166,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1402.3 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 15,
+    category: "azot grubu",
   },
   {
     name: "Oksijen",
@@ -179,6 +187,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1313.9 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 16,
+    category: "kalkojen",
   },
   {
     name: "Flor",
@@ -199,6 +208,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1681 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 17,
+    category: "halojen",
   },
   {
     name: "Neon",
@@ -219,6 +229,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "2080.7 kJ/mol",
     bonding: "Kimyasal bağ yapmaz.",
     position: 18,
+    category: "soygaz",
   },
   {
     name: "Sodyum",
@@ -239,6 +250,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "495.8 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 1,
+    category: "alkali metal",
   },
   {
     name: "Magnezyum",
@@ -259,6 +271,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "737.7 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 2,
+    category: "toprak alkali metal",
   },
   {
     name: "Alüminyum",
@@ -280,6 +293,7 @@ export const elements: ElementData[] = [
     bonding:
       "Genellikle iyonik bağ yapar, ancak bazı bileşiklerde kovalent bağ da yapabilir.",
     position: 13,
+    category: "bor grubu",
   },
   {
     name: "Silisyum",
@@ -300,6 +314,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "786.5 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 14,
+    category: "karbon grubu",
   },
   {
     name: "Fosfor",
@@ -320,6 +335,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1011.8 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 15,
+    category: "azot grubu",
   },
   {
     name: "Kükürt",
@@ -340,6 +356,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "999.6 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 16,
+    category: "kalkojen",
   },
   {
     name: "Klor",
@@ -360,6 +377,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1251.2 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 17,
+    category: "halojen",
   },
   {
     name: "Argon",
@@ -380,6 +398,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1520.6 kJ/mol",
     bonding: "Kimyasal bağ yapmaz.",
     position: 18,
+    category: "soygaz",
   },
   {
     name: "Potasyum",
@@ -400,6 +419,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "418.8 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 1,
+    category: "alkali metal",
   },
   {
     name: "Kalsiyum",
@@ -420,6 +440,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "589.8 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 2,
+    category: "toprak alkali metal",
   },
   {
     name: "Skandiyum",
@@ -440,6 +461,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "633.1 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 3,
+    category: "geçiş metali", // Geçiş metalleri için özel kategori
   },
   {
     name: "Titanyum",
@@ -460,6 +482,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "658.8 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 4,
+    category: "geçiş metali",
   },
   {
     name: "Vanadyum",
@@ -480,6 +503,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "650.9 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 5,
+    category: "geçiş metali",
   },
   {
     name: "Krom",
@@ -500,6 +524,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "652.9 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 6,
+    category: "geçiş metali",
   },
   {
     name: "Manganez",
@@ -520,6 +545,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "717.3 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 7,
+    category: "geçiş metali",
   },
   {
     name: "Demir",
@@ -540,6 +566,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "762.5 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 8,
+    category: "geçiş metali",
   },
   {
     name: "Kobalt",
@@ -560,6 +587,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "760.4 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 9,
+    category: "geçiş metali",
   },
   {
     name: "Nikel",
@@ -580,6 +608,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "737.1 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 10,
+    category: "geçiş metali",
   },
   {
     name: "Bakır",
@@ -600,6 +629,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "745.5 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 11,
+    category: "geçiş metali",
   },
   {
     name: "Çinko",
@@ -620,6 +650,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "906.4 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 12,
+    category: "geçiş metali",
   },
   {
     name: "Galyum",
@@ -640,6 +671,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "578.8 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 13,
+    category: "bor grubu",
   },
   {
     name: "Germanyum",
@@ -660,6 +692,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "762 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 14,
+    category: "karbon grubu",
   },
   {
     name: "Arsenik",
@@ -680,6 +713,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "947 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 15,
+    category: "azot grubu",
   },
   {
     name: "Selenyum",
@@ -700,6 +734,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "941 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 16,
+    category: "kalkojen",
   },
   {
     name: "Brom",
@@ -720,6 +755,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1139.9 kJ/mol",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 17,
+    category: "halojen",
   },
   {
     name: "Kripton",
@@ -740,6 +776,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1350.8 kJ/mol",
     bonding: "Kimyasal bağ yapmaz.",
     position: 18,
+    category: "soygaz",
   },
   {
     name: "Rubidyum",
@@ -760,6 +797,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "403 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 1,
+    category: "alkali metal",
   },
   {
     name: "Stronsiyum",
@@ -780,6 +818,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "549.5 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 2,
+    category: "toprak alkali metal",
   },
   {
     name: "İtriyum",
@@ -800,6 +839,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "600 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 3,
+    category: "geçiş metali",
   },
   {
     name: "Zirkonyum",
@@ -820,6 +860,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "640.1 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 4,
+    category: "geçiş metali",
   },
   {
     name: "Niobyum",
@@ -840,6 +881,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "652.1 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 5,
+    category: "geçiş metali",
   },
   {
     name: "Molibden",
@@ -860,6 +902,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "684.3 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 6,
+    category: "geçiş metali",
   },
   {
     name: "Teknesyum",
