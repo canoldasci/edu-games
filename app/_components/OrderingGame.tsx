@@ -22,7 +22,7 @@ const OrderingGame = ({ Items }: DragDropGamePageProps) => {
 
   useEffect(() => {
     setDraggableItems(initialItems); // Client-side çalıştır, SSR sorun çıkarmaz
-  }, [initialItems]);
+  }, []);
 
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, item: Item) => {
     e.dataTransfer.setData("text/plain", JSON.stringify(item));
