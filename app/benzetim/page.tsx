@@ -5,7 +5,6 @@ import {
   Select,
   SelectItem,
   SelectTrigger,
-  SelectLabel,
   SelectValue,
   SelectGroup,
   SelectContent,
