@@ -23,7 +23,7 @@ export default function Home() {
         />
         Sıcaklık
         <TemperatureSlider value={temperature} onChange={setTemperature} />
-        <VaporPressureChart liquid={selectedLiquid} temperature={temperature} />
+        <VaporPressureChart liquid={selectedLiquid} />
         <InfoBox liquid={selectedLiquid} />
       </div>
     </div>

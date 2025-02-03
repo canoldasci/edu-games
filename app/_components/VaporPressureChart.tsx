@@ -13,10 +13,9 @@ import {
 
 interface Props {
   liquid: string;
-  temperature: number;
 }
 
-export default function VaporPressureChart({ liquid, temperature }: Props) {
+export default function VaporPressureChart({ liquid }: Props) {
   const selectedLiquid = LIQUIDS.find((l) => l.name === liquid);
   if (!selectedLiquid) return null;
 
