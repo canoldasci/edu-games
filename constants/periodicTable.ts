@@ -1847,6 +1847,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "380 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 1,
+    category: "alkali metal",
   },
   {
     name: "Radyum",
@@ -1867,6 +1868,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "509.3 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 2,
+    category: "toprak alkali metal",
   },
   {
     name: "Aktinyum",
@@ -1887,6 +1889,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "499 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 3,
+    category: "aktinit",
   },
   {
     name: "Toryum",
@@ -1907,6 +1910,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "587 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 4,
+    category: "aktinit",
   },
   {
     name: "Protaktinyum",
@@ -1927,6 +1931,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "568 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 5,
+    category: "aktinit",
   },
   {
     name: "Uranyum",
@@ -1947,6 +1952,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "597.6 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 6,
+    category: "aktinit",
   },
   {
     name: "Neptünyum",
@@ -1967,6 +1973,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "604.5 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 7,
+    category: "aktinit",
   },
   {
     name: "Plütonyum",
@@ -1987,6 +1994,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "584.7 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 8,
+    category: "aktinit",
   },
   {
     name: "Amerikyum",
@@ -2007,6 +2015,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "578 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 9,
+    category: "aktinit",
   },
   {
     name: "Küriyum",
@@ -2027,6 +2036,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "581 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 10,
+    category: "aktinit",
   },
   {
     name: "Berkelyum",
@@ -2047,6 +2057,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "601 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 11,
+    category: "aktinit",
   },
   {
     name: "Kaliforniyum",
@@ -2067,6 +2078,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "608 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 12,
+    category: "aktinit",
   },
   {
     name: "Einsteinyum",
@@ -2087,6 +2099,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "619 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 13,
+    category: "aktinit",
   },
   {
     name: "Fermiyum",
@@ -2107,6 +2120,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "627 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 14,
+    category: "aktinit",
   },
   {
     name: "Mendelevyum",
@@ -2127,6 +2141,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "635 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 15,
+    category: "aktinit",
   },
   {
     name: "Nobelyum",
@@ -2147,6 +2162,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "642 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 16,
+    category: "aktinit",
   },
   {
     name: "Lawrensiyum",
@@ -2167,6 +2183,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "470 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 17,
+    category: "aktinit",
   },
   {
     name: "Rutherfordiyum",
@@ -2187,6 +2204,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "580 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 4,
+    category: "geçiş metali",
   },
   {
     name: "Dubniyum",
@@ -2207,6 +2225,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "664 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 5,
+    category: "geçiş metali",
   },
   {
     name: "Seaborgiyum",
@@ -2227,6 +2246,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "742 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 6,
+    category: "geçiş metali",
   },
   {
     name: "Bohriyum",
@@ -2247,6 +2267,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "742 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 7,
+    category: "geçiş metali",
   },
   {
     name: "Hassiyum",
@@ -2267,6 +2288,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "730 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 8,
+    category: "geçiş metali",
   },
   {
     name: "Meitneriyum",
@@ -2287,6 +2309,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "800 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 9,
+    category: "geçiş metali",
   },
   {
     name: "Darmstadtiyum",
@@ -2307,6 +2330,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "800 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 10,
+    category: "geçiş metali",
   },
   {
     name: "Röntgeniyum",
@@ -2327,6 +2351,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1020 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 11,
+    category: "geçiş metali",
   },
   {
     name: "Kopernikyum",
@@ -2347,6 +2372,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1150 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 12,
+    category: "geçiş metali",
   },
   {
     name: "Nihonyum",
@@ -2367,6 +2393,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1130 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 13,
+    category: "bor grubu",
   },
   {
     name: "Flerovyum",
@@ -2387,6 +2414,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1130 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 14,
+    category: "karbon grubu",
   },
   {
     name: "Moskavyum",
@@ -2407,6 +2435,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1130 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 15,
+    category: "azot grubu",
   },
   {
     name: "Livermoryum",
@@ -2427,6 +2456,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "1130 kJ/mol",
     bonding: "Genellikle iyonik bağ yapar.",
     position: 16,
+    category: "kalkojen",
   },
   {
     name: "Tenesin",
@@ -2447,6 +2477,7 @@ export const elements: ElementData[] = [
     ionizationEnergy: "Unknown",
     bonding: "Genellikle kovalent bağ yapar.",
     position: 17,
+    category: "halojen",
   },
   {
     name: "Oganesson",
@@ -2467,5 +2498,6 @@ export const elements: ElementData[] = [
     ionizationEnergy: "Unknown",
     bonding: "Kimyasal bağ yapmaz.",
     position: 18,
+    category: "soygaz",
   },
 ];

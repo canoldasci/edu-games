@@ -18,7 +18,8 @@ const PeriodicTable = () => {
     halojen: "bg-purple-500",
     soygaz: "bg-pink-500",
     "geçiş metali": "bg-teal-500",
-    lantanit: "bg-cyan-500",
+    lantanit: "bg-slate-400",
+    aktinit: "bg-slate-500",
   };
 
   return (
