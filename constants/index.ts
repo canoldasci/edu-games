@@ -123,33 +123,55 @@ export const atomTeorileri: Level[] = [
     ],
   },
 ];
-export const LIQUIDS = [
-  {
-    name: "Water (H₂O)",
-    initialPressure: 0.03,
-    interaction: "Strong Hydrogen Bonds",
-    description:
-      "Water has strong hydrogen bonds, leading to a low vapor pressure.",
+export const viskoziteData = {
+  title: "Viskozite & Akışkanlık",
+  description:
+    "Viskozite, bir sıvının akmaya karşı direncidir. Sıcaklık arttıkça viskozite azalır ve akışkanlık artar. Bu simülasyonda su, bal ve bitkisel yağın sıcaklığa göre nasıl değiştiğini görebilirsiniz.",
+};
+
+export const fluids = {
+  su: {
+    name: "Su",
+    description: `Su, güçlü hidrojen bağları nedeniyle yüksek kaynama noktasına ve düşük buhar basıncına sahiptir. Sıcaklık arttıkça su molekülleri daha hızlı hareket eder ve buhar basıncı artar. mmHg). Basınç artışı buharlaşmayı zorlaştırır ve buhar basıncını düşürür.`,
+    color: "#3b82f6",
+    vaporPressureData: [
+      { temp: 20, pressure: 2.34, vaporPressure: 17.5 },
+      { temp: 40, pressure: 7.38, vaporPressure: 55.3 },
+      { temp: 60, pressure: 19.92, vaporPressure: 149.4 },
+      { temp: 80, pressure: 47.34, vaporPressure: 355.1 },
+      { temp: 100, pressure: 101.33, vaporPressure: 760.0 },
+    ],
   },
-  {
-    name: "Ethanol (C₂H₅OH)",
-    initialPressure: 0.08,
-    interaction: "Moderate Hydrogen Bonds",
+  alkol: {
+    name: "Alkol",
     description:
-      "Ethanol has weaker hydrogen bonds than water, resulting in a moderate vapor pressure.",
+      "Alkol, suya göre daha zayıf moleküller arası kuvvetlere sahiptir. Bu nedenle, alkolün buhar basıncı suya göre daha yüksektir. Sıcaklık artışı, alkol moleküllerinin buharlaşmasını hızlandırır. Basınç artışı ise buharlaşmayı yavaşlatır.",
+    color: "#f59e0b",
+    vaporPressureData: [
+      { temp: 20, pressure: 5.95, vaporPressure: 44.0 },
+      { temp: 40, pressure: 18.04, vaporPressure: 135.3 },
+      { temp: 60, pressure: 47.02, vaporPressure: 352.6 },
+      { temp: 80, pressure: 107.2, vaporPressure: 803.0 },
+      { temp: 100, pressure: 225.0, vaporPressure: 1687.5 },
+    ],
   },
-  {
-    name: "Ether (C₄H₁₀O)",
-    initialPressure: 0.2,
-    interaction: "Dipole-Dipole, London Forces",
+  eter: {
+    name: "Eter",
     description:
-      "Ether has weak intermolecular forces, giving it a high vapor pressure.",
+      "Eter, çok zayıf Van der Waals kuvvetlerine sahiptir. Bu nedenle, eterin buhar basıncı oldukça yüksektir. Sıcaklık artışı, eter moleküllerinin hızla buharlaşmasına neden olur. Basınç artışı ise buhar basıncını düşürür.",
+    color: "#10b981",
+    vaporPressureData: [
+      { temp: 20, pressure: 58.9, vaporPressure: 442.0 },
+      { temp: 40, pressure: 121.5, vaporPressure: 911.3 },
+      { temp: 60, pressure: 233.7, vaporPressure: 1752.8 },
+      { temp: 80, pressure: 433.0, vaporPressure: 3247.5 },
+      { temp: 100, pressure: 760.0, vaporPressure: 5700.0 },
+    ],
   },
-  {
-    name: "Mercury (Hg)",
-    initialPressure: 0.001,
-    interaction: "Metallic Bonds",
-    description:
-      "Mercury has strong metallic bonds, making its vapor pressure extremely low at room temperature.",
-  },
-];
+};
+
+export const cardData = {
+  title: "Buhar Basıncı Simülasyonu",
+  description:
+    "Bu simülasyon, farklı sıvıların sıcaklık ve basınç değişimlerine göre buhar basıncının nasıl değiştiğini gösterir. Öğrenciler, sıvı seçimi yaparak sıcaklık ve basınç değerlerini değiştirebilir ve moleküller arası etkileşimi gözlemleyebilir.",
+};

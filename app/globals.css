@@ -22,7 +22,7 @@ body {
   background-color: rgba(0, 0, 0, 2);
 } */
 
-@layer base {
+/* @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -84,5 +84,17 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+} */
+
+@keyframes moveMolecule {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translate(-10px, -10px); /* Yukarı hareket */
+  }
+  100% {
+    transform: translateY(0);
   }
 }
