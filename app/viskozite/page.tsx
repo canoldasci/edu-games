@@ -95,7 +95,7 @@ const LiquidSimulation: React.FC = () => {
 
                 {/* Akışkanlık Değeri */}
                 <div className="absolute top-2 left-2 text-sm font-medium">
-                  Akışkanlık: {(fluidity * 100).toFixed(0)}%
+                  Akışkanlık
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ const LiquidSimulation: React.FC = () => {
                     }}
                   ></div>
                 </div>
-                <span className="text-sm mt-1">Viskozite: {visc} mPa·s</span>
+                <span className="text-sm mt-1">Viskozite</span>
               </div>
             </div>
           );

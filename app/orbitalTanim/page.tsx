@@ -139,7 +139,7 @@ const OrbitalsInfo = () => {
                 <div className="text-lg font-semibold">{orbital.name}</div>
               </Card>
             </DialogTrigger>
-            <DialogContent className="max-w-[95vw] max-h-[75vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
+            <DialogContent className="bg-white max-w-[95vw] max-h-[75vh] sm:max-w-[600px] w-full mx-2 overflow-y-auto">
               <DialogTitle className="text-2xl font-bold text-center mb-4">
                 {orbital.name}
               </DialogTitle>

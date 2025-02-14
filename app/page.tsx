@@ -75,6 +75,12 @@ export default function Home() {
           >
             sıvı ve yüzey (hazırlanıyor)
           </a>
+          <a
+            href="https://edu-games-three.vercel.app/dizilim"
+            className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+          >
+            9.1.7
+          </a>
         </div>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6"></footer>
