@@ -7,7 +7,7 @@ export interface Item {
 
 export interface Target {
   id: string;
-  name: string;
+  name?: string;
   correctItemId: string; // ID of the correct item for this target
 }
 
@@ -16,6 +16,8 @@ export interface Level {
   timeLimit: number; // Time limit in seconds
   items: Item[];
   targets: Target[];
+  orderingType?: string;
+  description?: string;
 }
 
 export interface Element {
@@ -28,4 +30,11 @@ export interface Element {
   discoveredYear: string;
   group: number; // Grup numarası (1-18)
   period: number; // Periyot numarası (1-7)
+}
+
+export interface orderingLevel {
+  level: number;
+  timeLimit: number; // Time limit in seconds
+  orderingType: string;
+  items: Item[];
 }

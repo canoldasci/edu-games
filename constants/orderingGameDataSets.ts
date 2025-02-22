@@ -1,4 +1,4 @@
-import { Item } from "../types";
+import { Item, Level } from "../types";
 export const atomicTheories: Item[] = [
   {
     id: "1",
@@ -83,5 +83,106 @@ export const orbitalEnergies: Item[] = [
     name: "4p Orbitalleri",
     description:
       "3d orbitalinden daha yüksek enerjiye sahip olan p orbitalleri.",
+  },
+];
+
+export const atomicRadiusIyon: Level[] = [
+  {
+    level: 1,
+    timeLimit: 10,
+    orderingType: "atomRadius",
+    items: [
+      { id: "1", name: "Berilyum - 4Be" },
+      { id: "2", name: "Magnezyum - 12Mg" },
+      { id: "3", name: "Kalsiyum - 20Ca" },
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+    ],
+  },
+  {
+    level: 2,
+    timeLimit: 10,
+    orderingType: "iyonizationEnergy",
+    items: [
+      { id: "3", name: "Berilyum - 4Be" },
+      { id: "2", name: "Magnezyum - 12Mg" },
+      { id: "1", name: "Kalsiyum - 20Ca" },
+    ],
+    targets: [
+      { id: "t3", correctItemId: "3" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t1", correctItemId: "1" },
+    ],
+  },
+  {
+    level: 3,
+    timeLimit: 15,
+    orderingType: "atomRadius",
+    items: [
+      { id: "1", name: "Silisyum - 14Si" },
+      { id: "2", name: "Kükürt - 16S" },
+      { id: "3", name: "Karbon - 6C" },
+      { id: "4", name: "Oksijen - 8O" },
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t4", correctItemId: "4" },
+    ],
+  },
+  {
+    level: 4,
+    timeLimit: 15,
+    orderingType: "iyonizationEnergy",
+    items: [
+      { id: "4", name: "Oksijen - 8O" },
+      { id: "3", name: "Karbon - 6C" },
+      { id: "2", name: "Kükürt - 16S" },
+      { id: "1", name: "Silisyum - 14Si" },
+    ],
+    targets: [
+      { id: "t4", correctItemId: "4" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t1", correctItemId: "1" },
+    ],
+  },
+  {
+    level: 5,
+    timeLimit: 20,
+    orderingType: "atomRadius",
+    items: [
+      { id: "1", name: "Potasyum - 19K" },
+      { id: "2", name: "Sodyum - 11Na" },
+      { id: "3", name: "Brom - 35Br" },
+      { id: "4", name: "Fosfor - 15P" },
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t4", correctItemId: "4" },
+    ],
+  },
+  {
+    level: 6,
+    timeLimit: 20,
+    orderingType: "iyonizationEnergy",
+    items: [
+      { id: "4", name: "Fosfor - 15P" },
+      { id: "3", name: "Brom - 35Br" },
+      { id: "2", name: "Sodyum - 11Na" },
+      { id: "1", name: "Potasyum - 19K" },
+    ],
+    targets: [
+      { id: "t4", correctItemId: "4" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t1", correctItemId: "1" },
+    ],
   },
 ];

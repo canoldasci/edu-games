@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen w-full flex flex-col items-center justify-center relative main-card">
+      <main className="min-h-screen w-full flex flex-col items-center justify-center relative main-card container">
         <div className="flex items-center justify-center flex-wrap gap-6 mt-8">
           <a
             href="https://edu-games-three.vercel.app/atomTeorileri"

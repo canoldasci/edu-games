@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import DragBox from "./DragBox";
+import TargetBox from "./TargetBox";
 import { Button } from "@/components/ui/button"; // Shadcn Button bileşeni
 import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card bileşeni
 import { Level, Item, Target } from "../../types/index";
@@ -9,9 +12,13 @@ import Image from "next/image"; // Resim için Image bileşeni
 
 interface DragDropGamePageProps {
   levels: Level[];
+  handleOrderingType?: (type: string) => void;
 }
 
-const DragDropGame = ({ levels }: DragDropGamePageProps) => {
+const DragDropGame = ({
+  levels,
+  handleOrderingType,
+}: DragDropGamePageProps) => {
   const [currentLevel, setCurrentLevel] = useState<Level>(
     levels?.[0] || { level: 1, items: [], targets: [], timeLimit: 40 }
   ); // İlk seviye
@@ -24,6 +31,7 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
   const [timeLeft, setTimeLeft] = useState(currentLevel.timeLimit);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [isOrdering, setIsOrdering] = useState<Boolean | null>(null);
 
   const handleLevel = (level: Level) => {
     setCurrentLevel({ ...level });
@@ -35,9 +43,20 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
   };
 
   useEffect(() => {
+    const firstLevel = levels[0];
+    if (firstLevel?.orderingType) {
+      setIsOrdering(true); // Eğer tanımlıysa çağır
+      handleOrderingType?.(firstLevel.orderingType);
+    }
+  }, []);
+
+  useEffect(() => {
     const currentLevelItems = shuffleArray([...currentLevel.items]);
     setDraggableItems(currentLevelItems);
     console.log("currentLevelItems", currentLevelItems);
+    if (isOrdering && currentLevel?.orderingType) {
+      handleOrderingType?.(currentLevel.orderingType);
+    }
   }, [currentLevel]); // currentLevel değiştiğinde tekrar çalışır
 
   useEffect(() => {
@@ -148,63 +167,41 @@ const DragDropGame = ({ levels }: DragDropGamePageProps) => {
           <div className="text-lg font-bold">Puan: {score}</div>
         </div>
 
-        {/* Sürüklenebilir Öğeler */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          {draggableItems.map((item) => (
-            <Card
-              key={item.id}
-              draggable
-              onDragStart={(e) => handleDragStart(e, item)}
-              className="p-4 bg-blue-100 rounded-lg cursor-move hover:bg-blue-200 transition-colors"
-            >
-              {item.image ? (
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={50}
-                  height={50}
-                  className="max-w-full h-auto"
-                />
-              ) : (
-                item.name
-              )}
-            </Card>
-          ))}
-        </div>
+        <div className="grid grid-cols-2 gap-8 mb-4">
+          {/* Sürüklenebilir Öğeler */}
+          <div
+            className={cn(
+              "flex gap-4 justify-between items-center",
+              !isOrdering ? "flex-wrap" : "flex-col"
+            )}
+          >
+            {draggableItems.map((item) => (
+              <DragBox
+                key={item.id}
+                item={item}
+                handleDragStart={handleDragStart}
+              />
+            ))}
+          </div>
 
-        {/* Hedef Kutuları */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-          {targetStates.map((state, index) => (
-            <Card
-              key={state.target.id}
-              onDrop={(e) => handleDrop(e, index)}
-              onDragOver={handleDragOver}
-              className={`p-4 min-h-20 flex flex-col items-center justify-center rounded-lg ${
-                resultsChecked
-                  ? state.item?.id === state.target.correctItemId
-                    ? "bg-green-200"
-                    : "bg-red-200"
-                  : "bg-gray-200"
-              }`}
-            >
-              <div className="text-sm font-medium text-gray-600">
-                {state.target.name}
-              </div>
-              <div className="text-lg font-bold">
-                {state.item?.image ? (
-                  <Image
-                    src={state.item.image}
-                    alt={state.item.name}
-                    width={50}
-                    height={50}
-                    className="max-w-full h-auto"
-                  />
-                ) : (
-                  state.item?.name
-                )}
-              </div>
-            </Card>
-          ))}
+          {/* Hedef Kutuları */}
+          <div
+            className={cn(
+              "flex gap-4 justify-between items-center",
+              !isOrdering ? "flex-wrap" : "flex-col min-w-8"
+            )}
+          >
+            {targetStates.map((state, index) => (
+              <TargetBox
+                key={state.target.id}
+                handleDrop={handleDrop}
+                handleDragOver={handleDragOver}
+                state={state}
+                resultsChecked={resultsChecked}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Buton */}
