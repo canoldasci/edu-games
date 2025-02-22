@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/card"; // Shadcn Card bileşeni
 import { Item, Target } from "../../types/index";
 
 interface TargetBoxProps {
-  state: any;
-  handleDrop: (e: any, index: number) => void;
+  state: { target: Target; item: Item | null };
+  handleDrop: (e: React.DragEvent<HTMLDivElement>, index: number) => void;
   handleDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   resultsChecked: boolean;
   index: number;
@@ -19,7 +19,6 @@ const TargetBox = ({
   return (
     <>
       <Card
-        key={state.target.id}
         onDrop={(e) => handleDrop(e, index)}
         onDragOver={handleDragOver}
         className={`p-4 min-h-8 flex flex-col items-center justify-center rounded-lg w-full ${

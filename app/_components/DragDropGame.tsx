@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"; // Shadcn Button bileşeni
 import { Card, CardContent } from "@/components/ui/card"; // Shadcn Card bileşeni
 import { Level, Item, Target } from "../../types/index";
 import { shuffleArray } from "../../utils"; // shuffleArray fonksiyonu
-import Image from "next/image"; // Resim için Image bileşeni
 
 interface DragDropGamePageProps {
   levels: Level[];
@@ -31,7 +30,7 @@ const DragDropGame = ({
   const [timeLeft, setTimeLeft] = useState(currentLevel.timeLimit);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [isOrdering, setIsOrdering] = useState<Boolean | null>(null);
+  const [isOrdering, setIsOrdering] = useState<boolean | null>(null);
 
   const handleLevel = (level: Level) => {
     setCurrentLevel({ ...level });
