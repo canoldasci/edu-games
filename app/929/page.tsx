@@ -17,20 +17,26 @@ const LiquidSimulation: React.FC = () => {
 
   // Moleküllerin rastgele pozisyonlarını istemci tarafında oluştur
   useEffect(() => {
-    const positions = Array.from({ length: 15 }).map(() => ({
-      bottom: Math.random() * 100,
-      left: Math.random() * 90,
-      animation: `moveMolecule ${Math.random() * 2 + 1}s infinite alternate`,
-    }));
+    const positions = Array.from({ length: 15 }).map(() => {
+      const baseSpeed = 1 / ((tempIndex + 1) * 1.5); // tempIndex büyüdükçe süre azalır, hız artar
+      const randomFactor = Math.random() * 2 + 4;
+      const animationSpeed = baseSpeed * randomFactor;
+
+      return {
+        bottom: Math.random() * 100,
+        left: Math.random() * 90,
+        animation: `moveMolecule ${animationSpeed}s infinite alternate`,
+      };
+    });
+
     setRandomPositions(positions);
-  }, [tempIndex, pressureIndex]); // Sıcaklık veya basınç değiştiğinde yeniden hesapla
+  }, [tempIndex, pressureIndex]);
 
   // Seçili sıvının verilerini al
   const fluidData = fluids[selectedFluid];
-  const { vaporPressure: baseVaporPressure } =
-    fluidData.vaporPressureData[tempIndex];
-  // Basıncın buhar basıncına etkisi
-  const vaporPressure = baseVaporPressure / (1 + pressureIndex * 0.1); // Basınç arttıkça buhar basıncı azalır
+  console.log(fluidData);
+  const { vaporPressure } = fluidData.vaporPressureData[tempIndex];
+  console.log(vaporPressure);
 
   return (
     <div className="flex flex-col items-center p-6 space-y-6">
@@ -55,13 +61,6 @@ const LiquidSimulation: React.FC = () => {
           selectedIndex={tempIndex}
           onChange={setTempIndex}
           unit="°C"
-        />
-        <ValueSelector
-          title="Basınç"
-          values={fluidData.vaporPressureData.map((data) => data.pressure)}
-          selectedIndex={pressureIndex}
-          onChange={setPressureIndex}
-          unit="kPa"
         />
       </div>
 
