@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
 
-interface ValueSelectorProps {
+interface ValueSelectorProps<T extends string | number> {
   title: string; // Başlık (örneğin: "Sıcaklık" veya "Basınç")
-  values: number[]; // Değerler dizisi (örneğin: [20, 40, 60, 80, 100])
+  values: T[];
   selectedIndex: number; // Seçili değerin indeksi
   onChange: (index: number) => void; // Değer değiştiğinde çağrılacak fonksiyon
   unit?: string; // Birim (örneğin: "°C" veya "Pa")
 }
-const ValueSelector: React.FC<ValueSelectorProps> = ({
+const ValueSelector = <T extends string | number>({
   title,
   values,
   selectedIndex,
   onChange,
   unit = "",
-}) => {
+}: ValueSelectorProps<T>) => {
   return (
     <div className="flex flex-col items-center space-y-4 flex-wrap">
       <h2 className="text-xl font-semibold">

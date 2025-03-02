@@ -143,11 +143,13 @@ export default function Home() {
             className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
             Evsel atıklardan metal nanoparçacık elde etmek üzere deney
-            yapabilme(9.3.1) YOK
+            yapabilme(9.3.1)
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6"></footer>
+      <footer className="row-start-3 font-bold text-neutral-500 text-xs flex flex-wrap items-center justify-center gap-6">
+        2025
+      </footer>
     </>
   );
 }
