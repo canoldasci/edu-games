@@ -1,5 +1,3 @@
-import React from "react";
-
 const app = () => {
   return <div>page</div>;
 };

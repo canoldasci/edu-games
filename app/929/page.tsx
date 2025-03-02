@@ -10,7 +10,6 @@ import { fluids } from "../../constants/index"; // Sıvı verileri
 const LiquidSimulation: React.FC = () => {
   const [selectedFluid, setSelectedFluid] = useState<keyof typeof fluids>("su"); // Seçili sıvı
   const [tempIndex, setTempIndex] = useState(0); // Seçili sıcaklık indeksi
-  const [pressureIndex, setPressureIndex] = useState(0); // Seçili basınç indeksi
   const [randomPositions, setRandomPositions] = useState<
     { bottom: number; left: number; animation: string }[]
   >([]);
@@ -30,7 +29,7 @@ const LiquidSimulation: React.FC = () => {
     });
 
     setRandomPositions(positions);
-  }, [tempIndex, pressureIndex]);
+  }, [tempIndex]);
 
   // Seçili sıvının verilerini al
   const fluidData = fluids[selectedFluid];
