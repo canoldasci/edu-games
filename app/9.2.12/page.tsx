@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 import {
   Select,
   SelectContent,
@@ -134,10 +135,12 @@ export default function CapillaritySimulation() {
       {simulationStarted && (
         <Card className="mt-6 p-4 w-full max-w-md">
           <CardContent className="flex flex-col items-center gap-4">
-            <img
+            <Image
               src={simulationImage}
               alt="Simülasyon Görseli"
-              className="rounded-lg w-full h-auto"
+              width={300}
+              height={200}
+              className="rounded-lg"
             />
             <DescriptionCard
               title="Simülasyon Sonucu"
