@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen w-full flex flex-col items-center justify-center relative main-card container">
+      <main className="min-h-screen w-full flex flex-col items-center justify-center relative main-card container mb-5">
         <div className="flex items-center justify-center flex-wrap gap-6 mt-8">
           <a
             href="https://edu-games-three.vercel.app/911"
@@ -36,9 +36,9 @@ export default function Home() {
           </a>
           <a
             href=""
-            className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-indigo-700 hover:to-purple-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-rose-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-indigo-700 hover:to-purple-600 transition-all duration-300 ease-in-out"
           >
-            Orbitaller oyunu(9.1.5) YOK?
+            (9.1.5) YOK?
           </a>
           <a
             href="https://edu-games-three.vercel.app/916a"
@@ -49,7 +49,7 @@ export default function Home() {
 
           <a
             href="https://edu-games-three.vercel.app/916b"
-            className="px-6 py-3 bg-gradient-to-r from-pink-600 to-red-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-pink-700 hover:to-red-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-gradient-to-r from-green-600 to-yellow-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-pink-700 hover:to-red-600 transition-all duration-300 ease-in-out"
           >
             Elektron (9.1.6b) Farklı elementlerin elektron dizilimlerine göre
             doğru periyot ve gruplara sürükle bırak yöntemiyle yerleştirildiği
@@ -73,7 +73,7 @@ export default function Home() {
           </a>
           <a
             href=""
-            className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-rose-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
             Atom numaraları verilen farklı atomların elektronegatiflik
             değerlerinin periyodik tablodaki konumu ile ilişkilendirilerek
@@ -89,7 +89,7 @@ export default function Home() {
           </a>
           <a
             href=""
-            className="px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-yellow-700 hover:to-orange-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-rose-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-yellow-700 hover:to-orange-600 transition-all duration-300 ease-in-out"
           >
             Farklı elementlerin atomlarının seçilerek, valans elektronlarının
             doğru şekilde yerleştirilerek moleküllerin Lewis yapılarının
@@ -97,7 +97,7 @@ export default function Home() {
           </a>
           <a
             href=""
-            className="px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-yellow-700 hover:to-orange-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-rose-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-yellow-700 hover:to-orange-600 transition-all duration-300 ease-in-out"
           >
             Verilen farklı element ve bileşiklerinin polar yapılı ya da apolar
             yapılı şeklinde sınıflandırmalarına olanak sağlayan etkileşimli

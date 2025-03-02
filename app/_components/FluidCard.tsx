@@ -1,10 +1,11 @@
-import React from "react";
-
 interface LiquidContentProps {
   fluidity: number; // Sıvı seviyesi (0 ile 1 arasında)
   fluidColor: string; // Sıvı rengi (örneğin: "#3b82f6")
   randomPositions?: { bottom: number; left: number; animation: string }[]; // Moleküllerin pozisyonları
   vaporPressure?: number; // Buhar basıncı
+  particleColor?: string;
+  particleWidth?: string;
+  particleHeight?: string;
 }
 
 const FluidCard: React.FC<LiquidContentProps> = ({
@@ -12,6 +13,9 @@ const FluidCard: React.FC<LiquidContentProps> = ({
   fluidColor,
   randomPositions,
   vaporPressure,
+  particleWidth = "10px",
+  particleHeight = "10px",
+  particleColor = "white", // Varsayılan beyaz
 }) => {
   return (
     <div
@@ -26,11 +30,14 @@ const FluidCard: React.FC<LiquidContentProps> = ({
         randomPositions.map((pos, i) => (
           <div
             key={i}
-            className="absolute w-4 h-4 bg-white rounded-full opacity-70"
+            className={`absolute w-4 h-4 rounded-full opacity-70`}
             style={{
+              width: particleWidth,
+              height: particleHeight,
               bottom: `${pos.bottom}%`,
               left: `${pos.left}%`,
               animation: pos.animation,
+              backgroundColor: particleColor, // Molekül rengi
             }}
           ></div>
         ))}
