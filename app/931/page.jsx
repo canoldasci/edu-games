@@ -90,7 +90,6 @@ export default function ExperimentSimulator() {
       </div>
       <div className="flex justify-center space-x-10">
         <div className="flex flex-col items-center">
-          <h3 className="text-lg font-medium capitalize">hello</h3>
           <div className="relative w-32 h-48 border-4 border-gray-500 rounded-lg overflow-hidden bg-gray-200">
             <FluidCard
               fluidity={0.8}

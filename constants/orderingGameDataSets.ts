@@ -186,3 +186,89 @@ export const atomicRadiusIyon: Level[] = [
     ],
   },
 ];
+
+export const electronegativity: Level[] = [
+  {
+    level: 1,
+    timeLimit: 10,
+    orderingType: "electronegativity",
+    items: [
+      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Oksijen - 8O" }, // Elektronegatiflik: 3.44
+      { id: "3", name: "Azot - 7N" }, // Elektronegatiflik: 3.04
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+    ],
+  },
+  {
+    level: 2,
+    timeLimit: 10,
+    orderingType: "electronegativity",
+    items: [
+      { id: "1", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
+      { id: "2", name: "Kükürt - 16S" }, // Elektronegatiflik: 2.58
+      { id: "3", name: "Fosfor - 15P" }, // Elektronegatiflik: 2.19
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+    ],
+  },
+  {
+    level: 3,
+    timeLimit: 15,
+    orderingType: "electronegativity",
+    items: [
+      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
+      { id: "3", name: "Brom - 35Br" }, // Elektronegatiflik: 2.96
+      { id: "4", name: "İyot - 53I" }, // Elektronegatiflik: 2.66
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t4", correctItemId: "4" },
+    ],
+  },
+  {
+    level: 4,
+    timeLimit: 15,
+    orderingType: "electronegativity",
+    items: [
+      { id: "1", name: "Oksijen - 8O" }, // Elektronegatiflik: 3.44
+      { id: "2", name: "Azot - 7N" }, // Elektronegatiflik: 3.04
+      { id: "3", name: "Kükürt - 16S" }, // Elektronegatiflik: 2.58
+      { id: "4", name: "Fosfor - 15P" }, // Elektronegatiflik: 2.19
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t4", correctItemId: "4" },
+    ],
+  },
+  {
+    level: 5,
+    timeLimit: 20,
+    orderingType: "electronegativity",
+    items: [
+      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
+      { id: "3", name: "Brom - 35Br" }, // Elektronegatiflik: 2.96
+      { id: "4", name: "İyot - 53I" }, // Elektronegatiflik: 2.66
+      { id: "5", name: "Hidrojen - 1H" }, // Elektronegatiflik: 2.20
+    ],
+    targets: [
+      { id: "t1", correctItemId: "1" },
+      { id: "t2", correctItemId: "2" },
+      { id: "t3", correctItemId: "3" },
+      { id: "t4", correctItemId: "4" },
+      { id: "t5", correctItemId: "5" },
+    ],
+  },
+];

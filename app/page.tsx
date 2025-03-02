@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen w-full flex flex-col items-center justify-center relative main-card container mb-5">
-        <div className="flex items-center justify-center flex-wrap gap-6 mt-8">
+      <main className="">
+        <div className="flex flex-col items-center justify-center flex-wrap gap-2 mt-8">
           <a
             href="https://edu-games-three.vercel.app/911"
             className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-purple-700 hover:to-blue-600 transition-all duration-300 ease-in-out"
