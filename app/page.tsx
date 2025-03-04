@@ -73,12 +73,12 @@ export default function Home() {
           </a>
           <a
             href=""
-            className="px-6 py-3 bg-rose-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
+            className="px-6 py-3 bg-yellow-500 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 ease-in-out"
           >
             Atom numaraları verilen farklı atomların elektronegatiflik
             değerlerinin periyodik tablodaki konumu ile ilişkilendirilerek
             sıralanmasını sağlayan etkileşimli içerik hazırlanır.(yukarıdaki
-            gibi benzer etkinlik)(9.1.8b) YOK?
+            gibi benzer etkinlik)(9.1.8b)
           </a>
           <a
             href="https://edu-games-three.vercel.app/922"
