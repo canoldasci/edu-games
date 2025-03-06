@@ -1,6 +1,5 @@
 import DragDropGame from "../../_components/DragDropGame";
 import { piktogram as levels } from "../../../constants/index";
-import DescriptionCard from "@/app/_components/DescriptionCard";
 
 const Playground = () => {
   return (

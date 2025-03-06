@@ -1,6 +1,5 @@
 import DragDropGame from "../../_components/DragDropGame";
 import { gunlukKimya as levels } from "../../../constants/index"; // gunlukKimya veri setini dışarıdan al
-import DescriptionCard from "@/app/_components/DescriptionCard";
 
 const App = () => {
   return (

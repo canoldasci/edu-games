@@ -9,11 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  LewisElement as Element,
-  MoleculeStructure,
-  MoleculeTemplate,
-} from "@/types";
+import { LewisElement as Element, MoleculeTemplate } from "@/types";
 import { elements, moleculeTemplates } from "@/constants";
 import Image from "next/image";
 

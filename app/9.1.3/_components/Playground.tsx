@@ -1,4 +1,3 @@
-import OrderingGame from "../../_components/OrderingGame";
 import { atomicTheories as levels } from "../../../constants/orderingGameDataSets";
 import DragDropGame from "@/app/_components/DragDropGame";
 

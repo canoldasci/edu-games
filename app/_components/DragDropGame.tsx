@@ -40,7 +40,7 @@ const DragDropGame = ({
     );
     setTimeLeft(level.timeLimit);
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const firstLevel = levels[0];
     if (firstLevel?.orderingType) {
