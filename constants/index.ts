@@ -41,6 +41,69 @@ export const piktogram: Level[] = [
     ],
   },
 ];
+export const polar: Level[] = [
+  {
+    level: 1,
+    timeLimit: 50,
+    items: [
+      { id: "1", name: "Su (H₂O)" },
+      { id: "2", name: "Azot (N₂)" },
+    ],
+    targets: [
+      { id: "t1", name: "Polar", correctItemId: "1" },
+      { id: "t2", name: "Apolar", correctItemId: "2" },
+    ],
+  },
+  {
+    level: 2,
+    timeLimit: 50,
+    items: [
+      { id: "3", name: "Amonyak (NH₃)" },
+      { id: "4", name: "Karbondioksit (CO₂)" },
+    ],
+    targets: [
+      { id: "t3", name: "Polar", correctItemId: "3" },
+      { id: "t4", name: "Apolar", correctItemId: "4" },
+    ],
+  },
+  {
+    level: 3,
+    timeLimit: 50,
+    items: [
+      { id: "5", name: "Hidrojen klorür (HCl)" },
+      { id: "6", name: "İyot (I₂)" },
+    ],
+    targets: [
+      { id: "t5", name: "Polar", correctItemId: "5" },
+      { id: "t6", name: "Apolar", correctItemId: "6" },
+    ],
+  },
+  {
+    level: 4,
+    timeLimit: 50,
+    items: [
+      { id: "7", name: "Kükürt dioksit (SO₂)" },
+      { id: "8", name: "Oksijen (O₂)" },
+    ],
+    targets: [
+      { id: "t7", name: "Polar", correctItemId: "7" },
+      { id: "t8", name: "Apolar", correctItemId: "8" },
+    ],
+  },
+  {
+    level: 5,
+    timeLimit: 50,
+    items: [
+      { id: "9", name: "Hidrojen siyanür (HCN)" },
+      { id: "10", name: "Metan (CH₄)" },
+    ],
+    targets: [
+      { id: "t9", name: "Polar", correctItemId: "9" },
+      { id: "t10", name: "Apolar", correctItemId: "10" },
+    ],
+  },
+];
+
 export const elektron: Level[] = [
   {
     level: 1,

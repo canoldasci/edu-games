@@ -5,7 +5,7 @@ import { kazanimlar } from "../../constants/kazanim";
 import Polar from "./_components/Polar";
 const Page = () => {
   const [showCover, setShowCover] = useState<boolean>(true);
-  const title = "KİM.9.2.4";
+  const title = "KİM.9.2.5";
   const description = kazanimlar[title];
   const handleShow = (show: boolean) => {
     setShowCover(show);
