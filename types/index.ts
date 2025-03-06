@@ -9,6 +9,7 @@ export interface Target {
   id: string;
   name?: string;
   correctItemId: string; // ID of the correct item for this target
+  item?: Item | null;
 }
 
 export interface Level {

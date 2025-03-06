@@ -224,7 +224,7 @@ const Electron = () => {
   const [dogruCevapSayisi, setDogruCevapSayisi] = useState(0);
   const [oyunAsamasi, setOyunAsamasi] = useState("zorlukSecimi");
   const [isAlertOpen, setIsAlertOpen] = useState(false);
-  const [kalanSure, setKalanSure] = useState(60);
+  const [kalanSure, setKalanSure] = useState(10000);
   const [timerActive, setTimerActive] = useState(false);
   const [yuksekSkor, setYuksekSkor] = useState(0);
 
