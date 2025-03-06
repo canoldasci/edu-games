@@ -86,7 +86,7 @@ const moleculeTemplates: MoleculeTemplate[] = [
     ],
     description:
       "Su molekülü, bir oksijen ve iki hidrojen atomundan oluşur. Polar kovalent bağ içerir.",
-    lewisStructure: "H:Ö:H\n   ∶",
+    lewisStructure: "  H\n   :\nO\n   :\n  H",
     moleculeGeometry: "V Şekli (Açılı)",
     geometryDetails:
       "İki hidrojen atomu, merkez oksijen atomuna bağlanır. H-O-H açısı yaklaşık 104.5 derecedir.",
@@ -101,7 +101,7 @@ const moleculeTemplates: MoleculeTemplate[] = [
     ],
     description:
       "Amonyak molekülü, bir azot ve üç hidrojen atomundan oluşur. Üçgen piramit yapıdadır.",
-    lewisStructure: "H:N:H\n ∶ ∶\n  H",
+    lewisStructure: "  H\n   :\nN\n:   :\n  H   H",
     moleculeGeometry: "Üçgen Piramit",
     geometryDetails:
       "Üç hidrojen atomu, merkez azot atomuna bağlanır. Azot atomunda bir lone çift elektron bulunur.",
@@ -116,7 +116,7 @@ const moleculeTemplates: MoleculeTemplate[] = [
     ],
     description:
       "Metan molekülü, bir karbon ve dört hidrojen atomundan oluşur. Düzgün tetrahedral geometriye sahiptir.",
-    lewisStructure: "    H\n    |\n  H-C-H\n    |\n    H",
+    lewisStructure: "    H\n    |\nH--C--H\n    |\n    H",
     moleculeGeometry: "Tetrahedral",
     geometryDetails:
       "Dört hidrojen atomu, merkez karbon atomuna eşit uzaklıkta bağlanır. Düzgün geometri sergiler.",
