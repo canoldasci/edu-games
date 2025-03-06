@@ -1,5 +1,5 @@
 // ../../constants/index.ts
-import { Level } from "../types/index";
+import { Level, Liquid, Surface, InteractionResult } from "../types/index";
 
 export const gunlukKimya: Level[] = [
   {
@@ -237,4 +237,108 @@ export const cardData = {
   title: "Buhar Basıncı Simülasyonu",
   description:
     "Bu simülasyon, farklı sıvıların sıcaklık ve basınç değişimlerine göre buhar basıncının nasıl değiştiğini gösterir. Öğrenciler, sıvı seçimi yaparak sıcaklık ve basınç değerlerini değiştirebilir ve moleküller arası etkileşimi gözlemleyebilir.",
+};
+export const liquids: Liquid[] = [
+  {
+    name: "Su",
+    color: "text-blue-700",
+    surfaceTension: 72, // mN/m
+    wettability: "Islatır",
+    description: "Su, çoğu yüzeyi ıslatan polar bir sıvıdır.",
+    behavior: "İçbükey menisküs oluşturur",
+  },
+  {
+    name: "Cıva",
+    color: "text-gray-700",
+    surfaceTension: 486, // mN/m
+    wettability: "Islatmaz",
+    description: "Cıva, metal yüzeylerde içbükey menisküs oluşturmaz.",
+    behavior: "Dışbükey menisküs oluşturur",
+  },
+  {
+    name: "Zeytinyağı",
+    color: "text-green-700",
+    surfaceTension: 32, // mN/m
+    wettability: "Kısmen Islatır",
+    description: "Zeytinyağı, düşük yüzey gerilimli bir sıvıdır.",
+    behavior: "Düz yüzey oluşturur",
+  },
+];
+
+export const surfaces: Surface[] = [
+  {
+    name: "Cam",
+    color: "text-blue-700",
+    type: "Hidrofilik",
+    description: "Su seven, suyu ıslatan yüzey",
+  },
+  {
+    name: "Plastik",
+    color: "text-red-700",
+    type: "Hidrofobik",
+    description: "Su sevmeyen, suyu iten yüzey",
+  },
+  {
+    name: "Mum Kaplı Cam",
+    color: "text-yellow-700",
+    type: "Hidrofobik",
+    description: "Su damlaları üzerinde toplanır",
+  },
+];
+
+export const interactionResults: Record<
+  string,
+  Record<string, InteractionResult>
+> = {
+  Su: {
+    Cam: {
+      meniscusType: "İçbükey",
+      capillaryEffect: "Yükselir",
+      dropletShape: "Yayılır",
+    },
+    Plastik: {
+      meniscusType: "Düz",
+      capillaryEffect: "Az Yükselir",
+      dropletShape: "Damla Halinde Durur",
+    },
+    "Mum Kaplı Cam": {
+      meniscusType: "Düz",
+      capillaryEffect: "Az Yükselir",
+      dropletShape: "Az Yayılır",
+    },
+  },
+  Cıva: {
+    Cam: {
+      meniscusType: "Dışbükey",
+      capillaryEffect: "Yükselmez",
+      dropletShape: "Damla Halinde Durur",
+    },
+    Plastik: {
+      meniscusType: "Dışbükey",
+      capillaryEffect: "Yükselmez",
+      dropletShape: "Damla Halinde Durur",
+    },
+    "Mum Kaplı Cam": {
+      meniscusType: "Dışbükey",
+      capillaryEffect: "Yükselmez",
+      dropletShape: "Damla Halinde Durur",
+    },
+  },
+  Zeytinyağı: {
+    Cam: {
+      meniscusType: "Düz",
+      capillaryEffect: "Az Yükselir",
+      dropletShape: "Az Yayılır",
+    },
+    Plastik: {
+      meniscusType: "Düz",
+      capillaryEffect: "Az Yükselir",
+      dropletShape: "Damla Halinde Durur",
+    },
+    "Mum Kaplı Cam": {
+      meniscusType: "Düz",
+      capillaryEffect: "Az Yükselir",
+      dropletShape: "Az Yayılır",
+    },
+  },
 };

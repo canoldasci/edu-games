@@ -39,3 +39,31 @@ export interface orderingLevel {
   orderingType: string;
   items: Item[];
 }
+// types.ts
+export interface Liquid {
+  name: string;
+  color: string;
+  surfaceTension: number; // mN/m
+  wettability: string;
+  description: string;
+  behavior: string;
+}
+
+export interface Surface {
+  name: string;
+  color: string;
+  type: string;
+  description: string;
+}
+
+export interface SimulationResult {
+  meniscusType: string;
+  capillaryEffect: string;
+  dropletShape: string;
+}
+
+export interface InteractionResult {
+  meniscusType: string;
+  capillaryEffect: string;
+  dropletShape: string;
+}
