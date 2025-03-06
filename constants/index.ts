@@ -1,10 +1,17 @@
 // ../../constants/index.ts
-import { Level, Liquid, Surface, InteractionResult } from "../types/index";
+import {
+  Level,
+  Liquid,
+  Surface,
+  InteractionResult,
+  LewisElement,
+  MoleculeTemplate,
+} from "../types/index";
 
 export const gunlukKimya: Level[] = [
   {
     level: 1,
-    timeLimit: 10,
+    timeLimit: 30,
     items: [
       { id: "1", name: "Sabun (Sodyum Stearat)" },
       { id: "2", name: "İyot" },
@@ -342,3 +349,163 @@ export const interactionResults: Record<
     },
   },
 };
+export const orbitalsData = [
+  {
+    id: "s",
+    name: "S Orbital",
+    shape:
+      "Küresel simetrik bir yapıya sahiptir. Elektronlar çekirdek etrafında eşit olasılıkla bulunabilir.",
+    energyLevels:
+      "Her enerji seviyesinde bir adet s orbitali bulunur (örneğin 1s, 2s, 3s…).",
+    electronCapacity: "Her bir s orbitali en fazla 2 elektron barındırabilir.",
+    specialties: [
+      "Çekirdeğe en yakın orbitaldir (1s).",
+      "Elektron yoğunluğu çekirdek etrafında maksimumdur.",
+    ],
+    image: "/s-orbital.jpeg",
+  },
+  {
+    id: "p",
+    name: "P Orbitalleri",
+    shape:
+      "Çift loblu ve dambıl (halter) şeklindedir. Loblar arasında nodal bir düzlem bulunur (elektronun bulunma ihtimali sıfır olan bölge).",
+    energyLevels: "2. enerji seviyesinden itibaren bulunur (2p, 3p, 4p…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 3 farklı p orbitali (px, py, pz) vardır ve her biri 2 elektron alabilir. Toplamda 6 elektron taşır.",
+    specialties: [
+      "p orbitalleri x, y ve z eksenlerinde yerleşir.",
+      "Şekilleri ve yönelimleri, kimyasal bağ oluşumunda büyük rol oynar (örneğin kovalent bağlarda).",
+    ],
+    image: "/p-orbitals.jpeg",
+  },
+  {
+    id: "d",
+    name: "D Orbitalleri",
+    shape:
+      "Daha karmaşık bir yapıdadır. Çoğunlukla yonca yaprağına benzer şekiller gösterir. (Bazıları halkalıdır, örn: dz²).",
+    energyLevels: "3. enerji seviyesinden itibaren bulunur (3d, 4d, 5d…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 5 farklı d orbitali bulunur ve her biri 2 elektron alabilir. Toplamda 10 elektron taşır.",
+    specialties: [
+      "d orbitalleri geçiş metalleri gibi elementlerin kimyasal özelliklerini ve renklerini belirler.",
+      "d orbitallerindeki elektronlar genellikle metal komplekslerinde bağ yapımında rol oynar.",
+    ],
+    image: "/d-orbitals.jpeg",
+  },
+  {
+    id: "f",
+    name: "F Orbital",
+    shape:
+      "Çok daha karmaşık ve simetrik olmayan bir yapıya sahiptir. Şekillerini görselleştirmek zordur.",
+    energyLevels: "4. enerji seviyesinden itibaren bulunur (4f, 5f…).",
+    electronCapacity:
+      "Bir enerji seviyesinde 7 farklı f orbitali bulunur ve her biri 2 elektron alabilir. Toplamda 14 elektron taşır.",
+    specialties: [
+      "f orbitalleri lantanidler ve aktinitler gibi elementlerde görülür.",
+      "Elektronların f orbitallerine yerleşimi, bu elementlerin manyetik ve kimyasal özelliklerini etkiler.",
+    ],
+    image: "/f-orbitals.jpeg",
+  },
+];
+
+export const elements: LewisElement[] = [
+  {
+    name: "Hidrojen",
+    symbol: "H",
+    atomicNumber: 1,
+    valenceElectrons: 1,
+    period: 1,
+    group: 1,
+    color: "text-blue-600",
+  },
+  {
+    name: "Oksijen",
+    symbol: "O",
+    atomicNumber: 8,
+    valenceElectrons: 6,
+    period: 2,
+    group: 16,
+    color: "text-red-600",
+  },
+  {
+    name: "Karbon",
+    symbol: "C",
+    atomicNumber: 6,
+    valenceElectrons: 4,
+    period: 2,
+    group: 14,
+    color: "text-gray-800",
+  },
+  {
+    name: "Azot",
+    symbol: "N",
+    atomicNumber: 7,
+    valenceElectrons: 5,
+    period: 2,
+    group: 15,
+    color: "text-green-600",
+  },
+];
+
+export const moleculeTemplates: MoleculeTemplate[] = [
+  {
+    name: "Su",
+    formula: "H2O",
+    requiredElements: ["H", "O"],
+    correctStructure: [
+      { symbol: "O", count: 1 },
+      { symbol: "H", count: 2 },
+    ],
+    description:
+      "Su molekülü, bir oksijen ve iki hidrojen atomundan oluşur. Polar kovalent bağ içerir.",
+    lewisStructure: "/h2o.jpeg",
+    moleculeGeometry: "V Şekli (Açılı)",
+    geometryDetails:
+      "İki hidrojen atomu, merkez oksijen atomuna bağlanır. H-O-H açısı yaklaşık 104.5 derecedir.",
+  },
+  {
+    name: "Amonyak",
+    formula: "NH3",
+    requiredElements: ["N", "H"],
+    correctStructure: [
+      { symbol: "N", count: 1 },
+      { symbol: "H", count: 3 },
+    ],
+    description:
+      "Amonyak molekülü, bir azot ve üç hidrojen atomundan oluşur. Üçgen piramit yapıdadır.",
+    lewisStructure: "/nh3.jpeg",
+    moleculeGeometry: "Üçgen Piramit",
+    geometryDetails:
+      "Üç hidrojen atomu, merkez azot atomuna bağlanır. Azot atomunda bir lone çift elektron bulunur.",
+  },
+  {
+    name: "Metan",
+    formula: "CH4",
+    requiredElements: ["C", "H"],
+    correctStructure: [
+      { symbol: "C", count: 1 },
+      { symbol: "H", count: 4 },
+    ],
+    description:
+      "Metan molekülü, bir karbon ve dört hidrojen atomundan oluşur. Düzgün tetrahedral geometriye sahiptir.",
+    lewisStructure: "/ch4.jpeg",
+    moleculeGeometry: "Tetrahedral",
+    geometryDetails:
+      "Dört hidrojen atomu, merkez karbon atomuna eşit uzaklıkta bağlanır. Düzgün geometri sergiler.",
+  },
+  {
+    name: "Karbondioksit",
+    formula: "CO2",
+    requiredElements: ["C", "O"],
+    correctStructure: [
+      { symbol: "C", count: 1 },
+      { symbol: "O", count: 2 },
+    ],
+    description:
+      "Karbondioksit, bir karbon ve iki oksijen atomundan oluşan doğrusal bir moleküldür. Çift bağ içerir ve apolar bir yapıya sahiptir.",
+    lewisStructure: "/co2.jpeg",
+    moleculeGeometry: "Doğrusal",
+    geometryDetails:
+      "Karbon atomu merkezde bulunur ve iki oksijen atomu ile çift bağ yapar. Bağ açısı 180°'dir.",
+  },
+];

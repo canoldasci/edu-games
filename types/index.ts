@@ -67,3 +67,29 @@ export interface InteractionResult {
   capillaryEffect: string;
   dropletShape: string;
 }
+
+export interface LewisElement {
+  name: string;
+  symbol: string;
+  atomicNumber: number;
+  valenceElectrons: number;
+  period: number;
+  group: number;
+  color: string;
+}
+
+export interface MoleculeStructure {
+  symbol: string;
+  count: number;
+}
+
+export interface MoleculeTemplate {
+  name: string;
+  formula: string;
+  requiredElements: string[];
+  correctStructure: MoleculeStructure[];
+  description: string;
+  lewisStructure: string;
+  moleculeGeometry: string;
+  geometryDetails: string;
+}

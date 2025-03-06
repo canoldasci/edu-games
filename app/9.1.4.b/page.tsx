@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Cover from "../_components/Cover";
 import { kazanimlar } from "../../constants/kazanim";
-import Lewis from "./_components/Lewis";
+import Playground from "./_components/Playground";
 const Page = () => {
   const [showCover, setShowCover] = useState<boolean>(true);
-  const title = "KİM.9.2.4";
+  const title = "KİM.9.1.4";
   const description = kazanimlar[title];
   const handleShow = (show: boolean) => {
     setShowCover(show);
@@ -13,7 +13,7 @@ const Page = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start p-6 gap-1">
       <Cover title={title} content={description} handleShow={handleShow} />
-      {!showCover && <Lewis />}
+      {!showCover && <Playground />}
     </div>
   );
 };

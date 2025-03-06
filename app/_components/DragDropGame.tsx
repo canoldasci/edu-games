@@ -155,7 +155,7 @@ const DragDropGame = ({
   };
 
   return (
-    <Card className="p-6 max-w-4xl mx-auto mt-10">
+    <Card className="p-6 max-w-4xl mx-auto">
       <CardContent>
         {/* Seviye, Zamanlayıcı ve Puan */}
         <div className="flex justify-between items-center mb-6">
@@ -170,7 +170,7 @@ const DragDropGame = ({
           {/* Sürüklenebilir Öğeler */}
           <div
             className={cn(
-              "flex gap-4 justify-between items-center",
+              "flex gap-4 flex-col justify-start items-center",
               !isOrdering ? "flex-wrap" : "flex-col"
             )}
           >
@@ -216,7 +216,9 @@ const DragDropGame = ({
           disabled={gameOver}
         >
           {showCorrect
-            ? "Sonraki Seviye"
+            ? levels.find((level) => level.level === currentLevel.level + 1)
+              ? "Sonraki Seviye"
+              : "Oyunu Bitir"
             : resultsChecked
             ? "Doğruları Göster"
             : "Sonuçları Kontrol Et"}

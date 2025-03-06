@@ -1,6 +1,7 @@
 import Image from "next/image"; // Resim için Image bileşeni
 import { Card } from "@/components/ui/card"; // Shadcn Card bileşeni
 import { Item, Target } from "../../types/index";
+import { cn } from "@/lib/utils";
 
 interface TargetBoxProps {
   state: { target: Target; item: Item | null };
@@ -21,18 +22,18 @@ const TargetBox = ({
       <Card
         onDrop={(e) => handleDrop(e, index)}
         onDragOver={handleDragOver}
-        className={`p-4 min-h-8 flex flex-col items-center justify-center rounded-lg w-full ${
-          resultsChecked
-            ? state.item?.id === state.target.correctItemId
-              ? "bg-green-200"
-              : "bg-red-200"
-            : "bg-gray-200"
-        }`}
+        className={cn(
+          "p-4 min-h-8 flex flex-col items-center justify-center rounded-lg w-full",
+          {
+            "bg-green-200":
+              resultsChecked && state.item?.id === state.target.correctItemId,
+            "bg-red-200":
+              resultsChecked && state.item?.id !== state.target.correctItemId,
+            "bg-gray-200": !resultsChecked,
+          }
+        )}
       >
-        <div className="text-sm font-medium text-gray-600">
-          {state.target.name}
-        </div>
-        <div className="text-lg font-bold">
+        <div className="flex items-center">
           {state.item?.image ? (
             <Image
               src={state.item.image}
@@ -42,10 +43,27 @@ const TargetBox = ({
               className="max-w-full h-auto"
             />
           ) : state.item?.name ? (
-            <span>{state.item?.name}</span>
+            <span className="text-center text-md font-bold ">
+              {state.target.name === undefined && (
+                <span className="text-center font-bold text-medium rounded-full border-2 border-stone-200 p-1 bg-white text-gray-600">
+                  {state.target.correctItemId}
+                </span>
+              )}{" "}
+              {state.item?.name}
+            </span>
           ) : (
-            <span className="font-thin">Buraya sürükleyin</span>
+            <span className="text-center text-sm text-gray-600">
+              {state.target.name === undefined && (
+                <span className="text-center font-bold text-medium rounded-full border-2 border-stone-200 p-1 bg-white text-gray-600">
+                  {state.target.correctItemId}
+                </span>
+              )}{" "}
+              Buraya sürükleyin
+            </span>
           )}
+        </div>
+        <div className="text-center text-medium font-bold">
+          {state.target.name}
         </div>
       </Card>
     </>

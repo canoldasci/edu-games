@@ -19,12 +19,12 @@ const Cover = ({ title, content, handleShow }: CoverProps) => {
   return (
     <>
       {show ? (
-        <>
+        <div className="mt-20 flex flex-col gap-5 items-center">
           <DescriptionCard title={title} content={content} />
-          <Button size="lg" onClick={handleButtonClick}>
+          <Button size="lg" className="w-1/3" onClick={handleButtonClick}>
             Başla
           </Button>
-        </>
+        </div>
       ) : null}
     </>
   );

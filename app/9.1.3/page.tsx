@@ -2,18 +2,18 @@
 import { useState } from "react";
 import Cover from "../_components/Cover";
 import { kazanimlar } from "../../constants/kazanim";
-import Electron from "./_components/Electron";
+import Playground from "./_components/Playground";
 const Page = () => {
   const [showCover, setShowCover] = useState<boolean>(true);
-  const title = "KİM.9.1.5";
+  const title = "KİM.9.1.3";
   const description = kazanimlar[title];
   const handleShow = (show: boolean) => {
     setShowCover(show);
   };
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-6 text-2xl">
+    <div className="min-h-screen flex flex-col items-center justify-start p-6 gap-1 ">
       <Cover title={title} content={description} handleShow={handleShow} />
-      {!showCover && <Electron />}
+      {!showCover && <Playground />}
     </div>
   );
 };

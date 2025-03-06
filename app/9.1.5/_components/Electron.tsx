@@ -24,60 +24,70 @@ const elementler = {
       sembol: "H",
       ad: "Hidrojen",
       dogruDizilim: "1s¹",
+      normalizeDizilim: "1s1",
     },
     {
       atomNumarasi: 2,
       sembol: "He",
       ad: "Helyum",
       dogruDizilim: "1s²",
+      normalizeDizilim: "1s2",
     },
     {
       atomNumarasi: 3,
       sembol: "Li",
       ad: "Lityum",
       dogruDizilim: "[He] 2s¹",
+      normalizeDizilim: "[He] 2s1",
     },
     {
       atomNumarasi: 4,
       sembol: "Be",
       ad: "Berilyum",
       dogruDizilim: "[He] 2s²",
+      normalizeDizilim: "[He] 2s2",
     },
     {
       atomNumarasi: 5,
       sembol: "B",
       ad: "Bor",
       dogruDizilim: "[He] 2s² 2p¹",
+      normalizeDizilim: "[He] 2s2 2p1",
     },
     {
       atomNumarasi: 7,
       sembol: "N",
       ad: "Azot",
       dogruDizilim: "1s² 2s² 2p³",
+      normalizeDizilim: "1s2 2s2 2p3",
     },
     {
       atomNumarasi: 9,
       sembol: "F",
       ad: "Flor",
       dogruDizilim: "1s² 2s² 2p⁵",
+      normalizeDizilim: "1s2 2s2 2p5",
     },
     {
       atomNumarasi: 10,
       sembol: "Ne",
       ad: "Neon",
       dogruDizilim: "1s² 2s² 2p⁶",
+      normalizeDizilim: "1s2 2s2 2p6",
     },
     {
       atomNumarasi: 12,
       sembol: "Mg",
       ad: "Magnezyum",
       dogruDizilim: "[Ne] 3s²",
+      normalizeDizilim: "[Ne] 3s2",
     },
     {
       atomNumarasi: 13,
       sembol: "Al",
       ad: "Alüminyum",
       dogruDizilim: "[Ne] 3s² 3p¹",
+      normalizeDizilim: "[Ne] 3s2 3p1",
     },
   ],
   orta: [
@@ -86,60 +96,70 @@ const elementler = {
       sembol: "C",
       ad: "Karbon",
       dogruDizilim: "1s² 2s² 2p²",
+      normalizeDizilim: "1s2 2s2 2p2",
     },
     {
       atomNumarasi: 11,
       sembol: "Na",
       ad: "Sodyum",
       dogruDizilim: "[Ne] 3s¹",
+      normalizeDizilim: "[Ne] 3s1",
     },
     {
       atomNumarasi: 8,
       sembol: "O",
       ad: "Oksijen",
       dogruDizilim: "1s² 2s² 2p⁴",
+      normalizeDizilim: "1s2 2s2 2p4",
     },
     {
       atomNumarasi: 14,
       sembol: "Si",
       ad: "Silisyum",
       dogruDizilim: "[Ne] 3s² 3p²",
+      normalizeDizilim: "[Ne] 3s2 3p2",
     },
     {
       atomNumarasi: 15,
       sembol: "P",
       ad: "Fosfor",
       dogruDizilim: "[Ne] 3s² 3p³",
+      normalizeDizilim: "[Ne] 3s2 3p3",
     },
     {
       atomNumarasi: 16,
       sembol: "S",
       ad: "Kükürt",
       dogruDizilim: "[Ne] 3s² 3p⁴",
+      normalizeDizilim: "[Ne] 3s2 3p4",
     },
     {
       atomNumarasi: 18,
       sembol: "Ar",
       ad: "Argon",
       dogruDizilim: "[Ne] 3s² 3p⁶",
+      normalizeDizilim: "[Ne] 3s2 3p6",
     },
     {
       atomNumarasi: 20,
       sembol: "Ca",
       ad: "Kalsiyum",
       dogruDizilim: "[Ar] 4s²",
+      normalizeDizilim: "[Ar] 4s2",
     },
     {
       atomNumarasi: 21,
       sembol: "Sc",
       ad: "Skandiyum",
       dogruDizilim: "[Ar] 3d¹ 4s²",
+      normalizeDizilim: "[Ar] 3d1 4s2",
     },
     {
       atomNumarasi: 22,
       sembol: "Ti",
       ad: "Titanyum",
       dogruDizilim: "[Ar] 3d² 4s²",
+      normalizeDizilim: "[Ar] 3d2 4s2",
     },
   ],
   zor: [
@@ -148,60 +168,70 @@ const elementler = {
       sembol: "Cl",
       ad: "Klor",
       dogruDizilim: "[Ne] 3s² 3p⁵",
+      normalizeDizilim: "[Ne] 3s2 3p5",
     },
     {
       atomNumarasi: 19,
       sembol: "K",
       ad: "Potasyum",
       dogruDizilim: "[Ar] 4s¹",
+      normalizeDizilim: "[Ar] 4s1",
     },
     {
       atomNumarasi: 24,
       sembol: "Cr",
       ad: "Krom",
       dogruDizilim: "[Ar] 3d⁵ 4s¹",
+      normalizeDizilim: "[Ar] 3d5 4s1",
     },
     {
       atomNumarasi: 25,
       sembol: "Mn",
       ad: "Mangan",
       dogruDizilim: "[Ar] 3d⁵ 4s²",
+      normalizeDizilim: "[Ar] 3d5 4s2",
     },
     {
       atomNumarasi: 26,
       sembol: "Fe",
       ad: "Demir",
       dogruDizilim: "[Ar] 3d⁶ 4s²",
+      normalizeDizilim: "[Ar] 3d6 4s2",
     },
     {
       atomNumarasi: 29,
       sembol: "Cu",
       ad: "Bakır",
       dogruDizilim: "[Ar] 3d¹⁰ 4s¹",
+      normalizeDizilim: "[Ar] 3d10 4s1",
     },
     {
       atomNumarasi: 30,
       sembol: "Zn",
       ad: "Çinko",
       dogruDizilim: "[Ar] 3d¹⁰ 4s²",
+      normalizeDizilim: "[Ar] 3d10 4s2",
     },
     {
       atomNumarasi: 34,
       sembol: "Se",
       ad: "Selenyum",
       dogruDizilim: "[Ar] 3d¹⁰ 4s² 4p⁴",
+      normalizeDizilim: "[Ar] 3d10 4s2 4p4",
     },
     {
       atomNumarasi: 42,
       sembol: "Mo",
       ad: "Molibden",
       dogruDizilim: "[Kr] 4d⁵ 5s¹",
+      normalizeDizilim: "[Kr] 4d5 5s1",
     },
     {
       atomNumarasi: 47,
       sembol: "Ag",
       ad: "Gümüş",
       dogruDizilim: "[Kr] 4d¹⁰ 5s¹",
+      normalizeDizilim: "[Kr] 4d10 5s1",
     },
   ],
 };
@@ -211,6 +241,7 @@ type ElementType = {
   sembol: string;
   ad: string;
   dogruDizilim: string;
+  normalizeDizilim: string;
 };
 
 const Electron = () => {
@@ -227,6 +258,7 @@ const Electron = () => {
   const [kalanSure, setKalanSure] = useState(10000);
   const [timerActive, setTimerActive] = useState(false);
   const [yuksekSkor, setYuksekSkor] = useState(0);
+  const [ipucu, setipucu] = useState<boolean>(false);
 
   // Timer etkileri
   useEffect(() => {
@@ -244,27 +276,13 @@ const Electron = () => {
 
   // Normalize fonksiyonu
   const normalize = (dizilim: string) =>
-    dizilim
-      .replace(/\s+/g, "")
-      .toLowerCase()
-      .replace(/(\d+)/g, (match) => {
-        const ustIndisler: { [key: string]: string } = {
-          "1": "¹",
-          "2": "²",
-          "3": "³",
-          "4": "⁴",
-          "5": "⁵",
-          "6": "⁶",
-          "7": "⁷",
-          "8": "⁸",
-        };
-        return ustIndisler[match] || match;
-      });
+    dizilim.replace(/\s+/g, "").toLowerCase();
 
   const zorlukSec = (seviye: string) => {
     setZorlukSeviyesi(seviye);
     setSecilenElement(null);
     setKullaniciDizilimi("");
+    setipucu(false);
     setSonuc(null);
     setPuan(0);
     setDogruCevapSayisi(0);
@@ -276,6 +294,7 @@ const Electron = () => {
   const elementSec = (element: ElementType) => {
     setSecilenElement(element);
     setKullaniciDizilimi("");
+    setipucu(false);
     setSonuc(null);
     setOyunAsamasi("oyunAlani");
     setKalanSure(60);
@@ -286,7 +305,8 @@ const Electron = () => {
     if (!secilenElement) return;
 
     const dogruMu =
-      normalize(kullaniciDizilimi) === normalize(secilenElement.dogruDizilim);
+      normalize(kullaniciDizilimi) ===
+      normalize(secilenElement.normalizeDizilim);
 
     setSonuc(dogruMu);
 
@@ -315,6 +335,7 @@ const Electron = () => {
         setTimeout(() => {
           setSecilenElement(mevcutElementler[yeniElementIndex]);
           setKullaniciDizilimi("");
+          setipucu(false);
           setSonuc(null);
           // Timer'ı yenile
           setKalanSure(60);
@@ -343,6 +364,7 @@ const Electron = () => {
       // Sıfırlamaları yap
       setSecilenElement(null);
       setKullaniciDizilimi("");
+      setipucu(false);
       setSonuc(null);
       setDogruCevapSayisi(0);
       setTimerActive(false);
@@ -480,11 +502,12 @@ const Electron = () => {
               <Button
                 variant="link"
                 className="p-0 h-auto text-sm font-normal"
-                onClick={() =>
-                  setKullaniciDizilimi(secilenElement?.dogruDizilim || "")
-                }
+                onClick={() => {
+                  setipucu(true);
+                  setKullaniciDizilimi(secilenElement?.normalizeDizilim || "");
+                }}
               >
-                Göster
+                {ipucu ? secilenElement?.dogruDizilim : "Göster"}
               </Button>
             </p>
           )}

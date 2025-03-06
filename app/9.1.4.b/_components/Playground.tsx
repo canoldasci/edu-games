@@ -1,5 +1,5 @@
-import OrderingGame from "../_components/OrderingGame";
-import { orbitalEnergies as Items } from "../../constants/orderingGameDataSets";
+import { orbitalEnergies as levels } from "../../../constants/orderingGameDataSets";
+import DragDropGame from "@/app/_components/DragDropGame";
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
         Karmaşık bir liste hâlinde verilen orbital türlerini bağıl enerjilerine
         göre sıralayınız.
       </h1>
-      <OrderingGame Items={Items} />
+      <DragDropGame levels={levels} />
     </div>
   );
 };

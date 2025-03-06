@@ -12,7 +12,7 @@ const DragBox = ({ item, handleDragStart }: DragBoxProps) => {
       <Card
         draggable
         onDragStart={(e) => handleDragStart(e, item)}
-        className="p-4 min-h-8 bg-blue-100 rounded-lg cursor-move hover:bg-blue-200 transition-colors w-full"
+        className="flex justify-center items-center p-4 min-h-8 bg-blue-100 rounded-lg cursor-move hover:bg-blue-200 transition-colors w-full"
       >
         {item.image ? (
           <Image
@@ -23,7 +23,7 @@ const DragBox = ({ item, handleDragStart }: DragBoxProps) => {
             className="max-w-full h-auto"
           />
         ) : (
-          item.name
+          <span className="text-sm">{item.name}</span>
         )}
       </Card>
     </>

@@ -9,134 +9,13 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-interface Element {
-  name: string;
-  symbol: string;
-  atomicNumber: number;
-  valenceElectrons: number;
-  period: number;
-  group: number;
-  color: string;
-}
-
-interface MoleculeStructure {
-  symbol: string;
-  count: number;
-}
-
-interface MoleculeTemplate {
-  name: string;
-  formula: string;
-  requiredElements: string[];
-  correctStructure: MoleculeStructure[];
-  description: string;
-  lewisStructure: string;
-  moleculeGeometry: string;
-  geometryDetails: string;
-}
-
-const elements: Element[] = [
-  {
-    name: "Hidrojen",
-    symbol: "H",
-    atomicNumber: 1,
-    valenceElectrons: 1,
-    period: 1,
-    group: 1,
-    color: "text-blue-600",
-  },
-  {
-    name: "Oksijen",
-    symbol: "O",
-    atomicNumber: 8,
-    valenceElectrons: 6,
-    period: 2,
-    group: 16,
-    color: "text-red-600",
-  },
-  {
-    name: "Karbon",
-    symbol: "C",
-    atomicNumber: 6,
-    valenceElectrons: 4,
-    period: 2,
-    group: 14,
-    color: "text-gray-800",
-  },
-  {
-    name: "Azot",
-    symbol: "N",
-    atomicNumber: 7,
-    valenceElectrons: 5,
-    period: 2,
-    group: 15,
-    color: "text-green-600",
-  },
-];
-
-const moleculeTemplates: MoleculeTemplate[] = [
-  {
-    name: "Su",
-    formula: "H2O",
-    requiredElements: ["H", "O"],
-    correctStructure: [
-      { symbol: "O", count: 1 },
-      { symbol: "H", count: 2 },
-    ],
-    description:
-      "Su molekülü, bir oksijen ve iki hidrojen atomundan oluşur. Polar kovalent bağ içerir.",
-    lewisStructure: "  H\n   :\nO\n   :\n  H",
-    moleculeGeometry: "V Şekli (Açılı)",
-    geometryDetails:
-      "İki hidrojen atomu, merkez oksijen atomuna bağlanır. H-O-H açısı yaklaşık 104.5 derecedir.",
-  },
-  {
-    name: "Amonyak",
-    formula: "NH3",
-    requiredElements: ["N", "H"],
-    correctStructure: [
-      { symbol: "N", count: 1 },
-      { symbol: "H", count: 3 },
-    ],
-    description:
-      "Amonyak molekülü, bir azot ve üç hidrojen atomundan oluşur. Üçgen piramit yapıdadır.",
-    lewisStructure: "  H\n   :\nN\n:   :\n  H   H",
-    moleculeGeometry: "Üçgen Piramit",
-    geometryDetails:
-      "Üç hidrojen atomu, merkez azot atomuna bağlanır. Azot atomunda bir lone çift elektron bulunur.",
-  },
-  {
-    name: "Metan",
-    formula: "CH4",
-    requiredElements: ["C", "H"],
-    correctStructure: [
-      { symbol: "C", count: 1 },
-      { symbol: "H", count: 4 },
-    ],
-    description:
-      "Metan molekülü, bir karbon ve dört hidrojen atomundan oluşur. Düzgün tetrahedral geometriye sahiptir.",
-    lewisStructure: "    H\n    |\nH--C--H\n    |\n    H",
-    moleculeGeometry: "Tetrahedral",
-    geometryDetails:
-      "Dört hidrojen atomu, merkez karbon atomuna eşit uzaklıkta bağlanır. Düzgün geometri sergiler.",
-  },
-  {
-    name: "Karbondioksit",
-    formula: "CO2",
-    requiredElements: ["C", "O"],
-    correctStructure: [
-      { symbol: "C", count: 1 },
-      { symbol: "O", count: 2 },
-    ],
-    description:
-      "Karbondioksit, bir karbon ve iki oksijen atomundan oluşan doğrusal bir moleküldür. Çift bağ içerir ve apolar bir yapıya sahiptir.",
-    lewisStructure: "O=C=O",
-    moleculeGeometry: "Doğrusal",
-    geometryDetails:
-      "Karbon atomu merkezde bulunur ve iki oksijen atomu ile çift bağ yapar. Bağ açısı 180°'dir.",
-  },
-];
+import {
+  LewisElement as Element,
+  MoleculeStructure,
+  MoleculeTemplate,
+} from "@/types";
+import { elements, moleculeTemplates } from "@/constants";
+import Image from "next/image";
 
 const LewisStructureGame: React.FC = () => {
   const [selectedElements, setSelectedElements] = useState<Element[]>([]);
@@ -276,8 +155,14 @@ const LewisStructureGame: React.FC = () => {
                     <h5 className="font-semibold text-blue-800">
                       Lewis Yapısı:
                     </h5>
-                    <div className="bg-white p-2 rounded font-mono text-sm whitespace-pre border border-blue-300">
-                      {currentMolecule.lewisStructure}
+                    <div className="bg-white overflow-hidden flex items-center justify-center p-2 rounded font-mono text-sm whitespace-pre border border-blue-300">
+                      <Image
+                        className="w-100 h-auto"
+                        src={currentMolecule?.lewisStructure}
+                        width="120"
+                        height="80"
+                        alt="lewis-structure-img"
+                      />
                     </div>
                   </div>
 
