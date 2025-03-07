@@ -2,7 +2,7 @@ import { Item, Level } from "../types";
 export const atomicTheories: Level[] = [
   {
     level: 1,
-    timeLimit: 10,
+    timeLimit: 60,
     orderingType: "atomicTheories",
     items: [
       { id: "1", name: "Demokritos'un Atom Teorisi" },
@@ -26,7 +26,7 @@ export const atomicTheories: Level[] = [
 export const orbitalEnergies: Level[] = [
   {
     level: 1, // Seviye numarası
-    timeLimit: 15, // Süre sınırı (saniye cinsinden)
+    timeLimit: 60, // Süre sınırı (saniye cinsinden)
     orderingType: "orbitalEnergyLevels", // Sıralama türü
     items: [
       {
@@ -93,7 +93,7 @@ export const orbitalEnergies: Level[] = [
 export const atomicRadiusIyon: Level[] = [
   {
     level: 1,
-    timeLimit: 15,
+    timeLimit: 60,
     orderingType: "atomRadius",
     items: [
       { id: "1", name: "Berilyum - ₄Be" },
@@ -108,7 +108,7 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 2,
-    timeLimit: 15,
+    timeLimit: 60,
     orderingType: "iyonizationEnergy",
     items: [
       { id: "3", name: "Berilyum - ₄Be" },
@@ -123,7 +123,7 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 3,
-    timeLimit: 20,
+    timeLimit: 60,
     orderingType: "atomRadius",
     items: [
       { id: "1", name: "Silisyum - ₁₄Si" },
@@ -140,7 +140,7 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 4,
-    timeLimit: 20,
+    timeLimit: 60,
     orderingType: "iyonizationEnergy",
     items: [
       { id: "4", name: "Oksijen - ₈O" },
@@ -157,7 +157,7 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 5,
-    timeLimit: 30,
+    timeLimit: 60,
     orderingType: "atomRadius",
     items: [
       { id: "1", name: "Potasyum - ₁₉K" },
@@ -174,7 +174,7 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 6,
-    timeLimit: 30,
+    timeLimit: 60,
     orderingType: "iyonizationEnergy",
     items: [
       { id: "4", name: "Fosfor - ₁₅P" },
@@ -194,7 +194,7 @@ export const atomicRadiusIyon: Level[] = [
 export const electronegativity: Level[] = [
   {
     level: 1,
-    timeLimit: 10,
+    timeLimit: 60,
     orderingType: "electronegativity",
     items: [
       { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
@@ -209,7 +209,7 @@ export const electronegativity: Level[] = [
   },
   {
     level: 2,
-    timeLimit: 10,
+    timeLimit: 60,
     orderingType: "electronegativity",
     items: [
       { id: "1", name: "Klor - ₁₇Cl" }, // Elektronegatiflik: 3.16
@@ -224,7 +224,7 @@ export const electronegativity: Level[] = [
   },
   {
     level: 3,
-    timeLimit: 15,
+    timeLimit: 60,
     orderingType: "electronegativity",
     items: [
       { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
@@ -241,7 +241,7 @@ export const electronegativity: Level[] = [
   },
   {
     level: 4,
-    timeLimit: 15,
+    timeLimit: 60,
     orderingType: "electronegativity",
     items: [
       { id: "1", name: "Oksijen - ₈O" }, // Elektronegatiflik: 3.44
@@ -258,7 +258,7 @@ export const electronegativity: Level[] = [
   },
   {
     level: 5,
-    timeLimit: 20,
+    timeLimit: 60,
     orderingType: "electronegativity",
     items: [
       { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
