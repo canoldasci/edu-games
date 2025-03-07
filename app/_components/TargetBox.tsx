@@ -62,9 +62,7 @@ const TargetBox = ({
             </span>
           )}
         </div>
-        <div className="text-center text-medium font-bold">
-          {state.target.name}
-        </div>
+        <div className="text-center text-medium ">{state.target.name}</div>
       </Card>
     </>
   );

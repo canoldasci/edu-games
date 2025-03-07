@@ -91,11 +91,10 @@ export default function ElectronTable() {
       {/* Açıklama Metni */}
       <h2 className="text-lg text-gray-700 mb-4">
         Aşağıdaki elementlerden birine tıklayın ve iyon oluşum sürecini görün!
-        ⚛️
       </h2>
 
       {/* Tablo ve İyon Bilgisi Alanı */}
-      <div className="w-full max-w-4xl flex gap-8">
+      <div className="w-full max-w-4xl flex flex-col-reverse sm:flex-row gap-8">
         {/* Elektron Dizilim Tablosu */}
         <table className="flex-1 border border-gray-300 text-center bg-white shadow-lg rounded-lg">
           <thead className="bg-blue-100 text-gray-700">

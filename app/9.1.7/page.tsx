@@ -5,7 +5,7 @@ import { kazanimlar } from "../../constants/kazanim";
 import Playground from "./_components/Playground";
 const Page = () => {
   const [showCover, setShowCover] = useState<boolean>(true);
-  const title = "KİM.9.1.6";
+  const title = "KİM.9.1.7";
   const description = kazanimlar[title];
   const handleShow = (show: boolean) => {
     setShowCover(show);

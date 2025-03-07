@@ -1,16 +1,12 @@
-import { orbitalEnergies as levels } from "../../../constants/orderingGameDataSets";
-import DragDropGame from "@/app/_components/DragDropGame";
+import Periodic from "../../_components/periodic";
 
-const App = () => {
+export default function Playground() {
   return (
-    <div className="min-h-screen mt-5 mx-1 w-full flex flex-col items-center justify-center relative main-card">
-      <h1 className="font-medium text-xl text-gray-800 text-center mb-4">
-        Karmaşık bir liste hâlinde verilen orbital türlerini bağıl enerjilerine
-        göre sıralayınız.
+    <main className="flex flex-col mx-4 items-center min-h-screen bg-background text-foreground p-4">
+      <h1 className="text-5xl font-bold mb-4 text-slate-900">
+        Periyodik Tablo
       </h1>
-      <DragDropGame levels={levels} />
-    </div>
+      <Periodic />
+    </main>
   );
-};
-
-export default App;
+}

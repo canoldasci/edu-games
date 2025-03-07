@@ -93,12 +93,12 @@ export const orbitalEnergies: Level[] = [
 export const atomicRadiusIyon: Level[] = [
   {
     level: 1,
-    timeLimit: 10,
+    timeLimit: 15,
     orderingType: "atomRadius",
     items: [
-      { id: "1", name: "Berilyum - 4Be" },
-      { id: "2", name: "Magnezyum - 12Mg" },
-      { id: "3", name: "Kalsiyum - 20Ca" },
+      { id: "1", name: "Berilyum - ₄Be" },
+      { id: "2", name: "Magnezyum - ₁₂Mg" },
+      { id: "3", name: "Kalsiyum - ₂₀Ca" },
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -108,12 +108,12 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 2,
-    timeLimit: 10,
+    timeLimit: 15,
     orderingType: "iyonizationEnergy",
     items: [
-      { id: "3", name: "Berilyum - 4Be" },
-      { id: "2", name: "Magnezyum - 12Mg" },
-      { id: "1", name: "Kalsiyum - 20Ca" },
+      { id: "3", name: "Berilyum - ₄Be" },
+      { id: "2", name: "Magnezyum - ₁₂Mg" },
+      { id: "1", name: "Kalsiyum - ₂₀Ca" },
     ],
     targets: [
       { id: "t3", correctItemId: "3" },
@@ -123,13 +123,13 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 3,
-    timeLimit: 15,
+    timeLimit: 20,
     orderingType: "atomRadius",
     items: [
-      { id: "1", name: "Silisyum - 14Si" },
-      { id: "2", name: "Kükürt - 16S" },
-      { id: "3", name: "Karbon - 6C" },
-      { id: "4", name: "Oksijen - 8O" },
+      { id: "1", name: "Silisyum - ₁₄Si" },
+      { id: "2", name: "Kükürt - ₁₆S" },
+      { id: "3", name: "Karbon - ₆C" },
+      { id: "4", name: "Oksijen - ₈O" },
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -140,13 +140,13 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 4,
-    timeLimit: 15,
+    timeLimit: 20,
     orderingType: "iyonizationEnergy",
     items: [
-      { id: "4", name: "Oksijen - 8O" },
-      { id: "3", name: "Karbon - 6C" },
-      { id: "2", name: "Kükürt - 16S" },
-      { id: "1", name: "Silisyum - 14Si" },
+      { id: "4", name: "Oksijen - ₈O" },
+      { id: "3", name: "Karbon - ₆C" },
+      { id: "2", name: "Kükürt - ₁₆S" },
+      { id: "1", name: "Silisyum - ₁₄Si" },
     ],
     targets: [
       { id: "t4", correctItemId: "4" },
@@ -157,13 +157,13 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 5,
-    timeLimit: 20,
+    timeLimit: 30,
     orderingType: "atomRadius",
     items: [
-      { id: "1", name: "Potasyum - 19K" },
-      { id: "2", name: "Sodyum - 11Na" },
-      { id: "3", name: "Brom - 35Br" },
-      { id: "4", name: "Fosfor - 15P" },
+      { id: "1", name: "Potasyum - ₁₉K" },
+      { id: "2", name: "Sodyum - ₁₁Na" },
+      { id: "3", name: "Brom - ₃₅Br" },
+      { id: "4", name: "Fosfor - ₁₅P" },
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -174,13 +174,13 @@ export const atomicRadiusIyon: Level[] = [
   },
   {
     level: 6,
-    timeLimit: 20,
+    timeLimit: 30,
     orderingType: "iyonizationEnergy",
     items: [
-      { id: "4", name: "Fosfor - 15P" },
-      { id: "3", name: "Brom - 35Br" },
-      { id: "2", name: "Sodyum - 11Na" },
-      { id: "1", name: "Potasyum - 19K" },
+      { id: "4", name: "Fosfor - ₁₅P" },
+      { id: "3", name: "Brom - ₃₅Br" },
+      { id: "2", name: "Sodyum - ₁₁Na" },
+      { id: "1", name: "Potasyum - ₁₉K" },
     ],
     targets: [
       { id: "t4", correctItemId: "4" },
@@ -197,9 +197,9 @@ export const electronegativity: Level[] = [
     timeLimit: 10,
     orderingType: "electronegativity",
     items: [
-      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
-      { id: "2", name: "Oksijen - 8O" }, // Elektronegatiflik: 3.44
-      { id: "3", name: "Azot - 7N" }, // Elektronegatiflik: 3.04
+      { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Oksijen - ₈O" }, // Elektronegatiflik: 3.44
+      { id: "3", name: "Azot - ₇N" }, // Elektronegatiflik: 3.04
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -212,9 +212,9 @@ export const electronegativity: Level[] = [
     timeLimit: 10,
     orderingType: "electronegativity",
     items: [
-      { id: "1", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
-      { id: "2", name: "Kükürt - 16S" }, // Elektronegatiflik: 2.58
-      { id: "3", name: "Fosfor - 15P" }, // Elektronegatiflik: 2.19
+      { id: "1", name: "Klor - ₁₇Cl" }, // Elektronegatiflik: 3.16
+      { id: "2", name: "Kükürt - ₁₆S" }, // Elektronegatiflik: 2.58
+      { id: "3", name: "Fosfor - ₁₅P" }, // Elektronegatiflik: 2.19
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -227,10 +227,10 @@ export const electronegativity: Level[] = [
     timeLimit: 15,
     orderingType: "electronegativity",
     items: [
-      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
-      { id: "2", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
-      { id: "3", name: "Brom - 35Br" }, // Elektronegatiflik: 2.96
-      { id: "4", name: "İyot - 53I" }, // Elektronegatiflik: 2.66
+      { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Klor - ₁₇Cl" }, // Elektronegatiflik: 3.16
+      { id: "3", name: "Brom - ₃₅Br" }, // Elektronegatiflik: 2.96
+      { id: "4", name: "İyot - ₅₃I" }, // Elektronegatiflik: 2.66
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -244,10 +244,10 @@ export const electronegativity: Level[] = [
     timeLimit: 15,
     orderingType: "electronegativity",
     items: [
-      { id: "1", name: "Oksijen - 8O" }, // Elektronegatiflik: 3.44
-      { id: "2", name: "Azot - 7N" }, // Elektronegatiflik: 3.04
-      { id: "3", name: "Kükürt - 16S" }, // Elektronegatiflik: 2.58
-      { id: "4", name: "Fosfor - 15P" }, // Elektronegatiflik: 2.19
+      { id: "1", name: "Oksijen - ₈O" }, // Elektronegatiflik: 3.44
+      { id: "2", name: "Azot - ₇N" }, // Elektronegatiflik: 3.04
+      { id: "3", name: "Kükürt - ₁₆S" }, // Elektronegatiflik: 2.58
+      { id: "4", name: "Fosfor - ₁₅P" }, // Elektronegatiflik: 2.19
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
@@ -261,11 +261,11 @@ export const electronegativity: Level[] = [
     timeLimit: 20,
     orderingType: "electronegativity",
     items: [
-      { id: "1", name: "Flor - 9F" }, // Elektronegatiflik: 3.98
-      { id: "2", name: "Klor - 17Cl" }, // Elektronegatiflik: 3.16
-      { id: "3", name: "Brom - 35Br" }, // Elektronegatiflik: 2.96
-      { id: "4", name: "İyot - 53I" }, // Elektronegatiflik: 2.66
-      { id: "5", name: "Hidrojen - 1H" }, // Elektronegatiflik: 2.20
+      { id: "1", name: "Flor - ₉F" }, // Elektronegatiflik: 3.98
+      { id: "2", name: "Klor - ₁₇Cl" }, // Elektronegatiflik: 3.16
+      { id: "3", name: "Brom - ₃₅Br" }, // Elektronegatiflik: 2.96
+      { id: "4", name: "İyot - ₅₃I" }, // Elektronegatiflik: 2.66
+      { id: "5", name: "Hidrojen - ₁H" }, // Elektronegatiflik: 2.20
     ],
     targets: [
       { id: "t1", correctItemId: "1" },
