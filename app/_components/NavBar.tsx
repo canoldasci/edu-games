@@ -5,9 +5,9 @@ export default function Navbar() {
     <nav className="">
       <div className="container mx-auto p-3">
         <Button
-          variant="outline"
+          variant="link"
           onClick={() => window.location.reload()}
-          className="text-lg f"
+          className="text-lg text-black font-bold"
         >
           Geri Dön
         </Button>
