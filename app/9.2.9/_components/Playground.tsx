@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"; // Shadcn Button bileşeni
-import DescriptionCard from "../_components/DescriptionCard"; // Açıklama kartı bileşeni
-import { cardData } from "../../constants/index"; // cardData objesi
-import ValueSelector from "../_components/ValueSelector"; // Reusable ValueSelector bileşeni
-import FluidCard from "../_components/FluidCard"; // Reusable LiquidContent bileşeni
-import { fluids } from "../../constants/index"; // Sıvı verileri
+import DescriptionCard from "../../_components/DescriptionCard"; // Açıklama kartı bileşeni
+import { cardData } from "../../../constants/index"; // cardData objesi
+import ValueSelector from "../../_components/ValueSelector"; // Reusable ValueSelector bileşeni
+import FluidCard from "../../_components/FluidCard"; // Reusable LiquidContent bileşeni
+import { fluids } from "../../../constants/index"; // Sıvı verileri
 
-const LiquidSimulation: React.FC = () => {
+const Playground: React.FC = () => {
   const [selectedFluid, setSelectedFluid] = useState<keyof typeof fluids>("su"); // Seçili sıvı
   const [tempIndex, setTempIndex] = useState(0); // Seçili sıcaklık indeksi
   const [randomPositions, setRandomPositions] = useState<
@@ -87,4 +87,4 @@ const LiquidSimulation: React.FC = () => {
   );
 };
 
-export default LiquidSimulation;
+export default Playground;

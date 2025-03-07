@@ -11,7 +11,7 @@ const Page = () => {
     setShowCover(show);
   };
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 space-y-6 text-2xl">
+    <div className="min-h-screen flex flex-col items-center justify-start p-6 gap-1">
       <Cover title={title} content={description} handleShow={handleShow} />
       {!showCover && <Playground />}
     </div>

@@ -1,14 +1,22 @@
 "use client";
 import { useState, useEffect } from "react";
-import FluidCard from "../_components/FluidCard";
-import DescriptionCard from "../_components/DescriptionCard"; // Açıklama kartı bileşeni
-import ValueSelector from "../_components/ValueSelector";
+import FluidCard from "../../_components/FluidCard";
+import DescriptionCard from "../../_components/DescriptionCard"; // Açıklama kartı bileşeni
+import ValueSelector from "../../_components/ValueSelector";
 import { Button } from "@/components/ui/button";
 
+type Position = {
+  bottom: number;
+  left: number;
+  animation: string;
+};
+type FinalColors = {
+  [key: `${string}-${string}`]: string;
+};
 const householdWastes = ["Muz Kabuğu", "Çay Atığı", "Portakal Kabuğu"];
 const solutions = ["Gümüş Çözeltisi", "Bakır Çözeltisi"];
 
-const finalColors = {
+const finalColors: FinalColors = {
   "Muz Kabuğu-Gümüş Çözeltisi": "#D4AF37", // Altın rengi
   "Muz Kabuğu-Bakır Çözeltisi": "#B87333", // Bakır rengi
   "Çay Atığı-Gümüş Çözeltisi": "#808080", // Gri
@@ -21,12 +29,12 @@ export default function ExperimentSimulator() {
   const [selectedWaste, setSelectedWaste] = useState(householdWastes[0]);
   const [selectedSolution, setSelectedSolution] = useState(solutions[0]);
   const [stepIndex, setStepIndex] = useState(0);
-  const [randomPositions, setRandomPositions] = useState([]);
+  const [randomPositions, setRandomPositions] = useState<Position[]>([]);
 
   useEffect(() => {
     if (stepIndex === steps.length - 1) {
     }
-    const positions = Array.from({ length: 500 }).map(() => {
+    const positions: Position[] = Array.from({ length: 500 }).map(() => {
       const baseSpeed = 1 / ((stepIndex + 1) * 1.5);
       const randomFactor = Math.random() * 2 + 4;
       const animationSpeed = baseSpeed * randomFactor;
