@@ -19,11 +19,11 @@ const Playground = () => {
           </h2>
         ) : orderingType === "iyonizationEnergy" ? (
           <h2 className="font-medium text-xl text-gray-800 text-center mb-2 ">
-            İyonlaşma enerjisine göre sıralayın
+            İyonlaşma enerjisine göre küçükten büyüğe doğru sıralayın
           </h2>
         ) : (
           <h2 className="font-medium text-xl text-gray-800 text-center mb-2 ">
-            Atom yarıçapına göre sıralayın.
+            Atom yarıçapına göre küçükten büyüğe doğru sıralayın.
           </h2>
         )}
         <DragDropGame levels={levels} handleOrderingType={handleOrderingType} />

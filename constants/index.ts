@@ -165,12 +165,13 @@ export const bilesikler: Level[] = [
     targets: [
       { id: "t1", name: "Kalsiyum Klorür", correctItemId: "1" },
       { id: "t2", name: "Demir(III) Sülfat", correctItemId: "2" },
-      { id: "t3", name: "CO₂", correctItemId: "3" },
-      { id: "t4", name: "N₂O₃", correctItemId: "4" },
+      { id: "t3", name: "Karbon dioksit", correctItemId: "3" },
+      { id: "t4", name: "Diazot trioksit", correctItemId: "4" },
       { id: "t5", name: "Amonyum Sülfat", correctItemId: "5" },
     ],
   },
 ];
+
 export const atomTeorileri: Level[] = [
   {
     level: 1,
@@ -202,7 +203,7 @@ export const viskoziteData = {
 export const fluids = {
   su: {
     name: "Su",
-    description: `Su, güçlü hidrojen bağları nedeniyle yüksek kaynama noktasına ve düşük buhar basıncına sahiptir. Sıcaklık arttıkça su molekülleri daha hızlı hareket eder ve buhar basıncı artar. mmHg). Basınç artışı buharlaşmayı zorlaştırır ve buhar basıncını düşürür.`,
+    description: `Su, güçlü hidrojen bağları nedeniyle yüksek kaynama noktasına ve düşük buhar basıncına sahiptir. Sıcaklık arttıkça su molekülleri daha hızlı hareket eder ve buhar basıncı artar.`,
     color: "#3b82f6",
     vaporPressureData: [
       { temp: 20, pressure: 2.34, vaporPressure: 17.5 },
@@ -215,7 +216,7 @@ export const fluids = {
   alkol: {
     name: "Alkol",
     description:
-      "Alkol, suya göre daha zayıf moleküller arası kuvvetlere sahiptir. Bu nedenle, alkolün buhar basıncı suya göre daha yüksektir. Sıcaklık artışı, alkol moleküllerinin buharlaşmasını hızlandırır. Basınç artışı ise buharlaşmayı yavaşlatır.",
+      "Alkol, suya göre daha zayıf moleküller arası kuvvetlere sahiptir. Bu nedenle, alkolün buhar basıncı suya göre daha yüksektir. Sıcaklık artışı, alkol moleküllerinin buharlaşmasını hızlandırır.",
     color: "#f59e0b",
     vaporPressureData: [
       { temp: 20, pressure: 5.95, vaporPressure: 44.0 },
@@ -228,7 +229,7 @@ export const fluids = {
   eter: {
     name: "Eter",
     description:
-      "Eter, çok zayıf Van der Waals kuvvetlerine sahiptir. Bu nedenle, eterin buhar basıncı oldukça yüksektir. Sıcaklık artışı, eter moleküllerinin hızla buharlaşmasına neden olur. Basınç artışı ise buhar basıncını düşürür.",
+      "Eter, çok zayıf Van der Waals kuvvetlerine sahiptir. Bu nedenle, eterin buhar basıncı oldukça yüksektir. Sıcaklık artışı, eter moleküllerinin hızla buharlaşmasına neden olur.",
     color: "#10b981",
     vaporPressureData: [
       { temp: 20, pressure: 58.9, vaporPressure: 442.0 },
