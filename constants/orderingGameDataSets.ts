@@ -178,8 +178,8 @@ export const atomicRadiusIyon: Level[] = [
     orderingType: "iyonizationEnergy",
     items: [
       { id: "1", name: "Potasyum - ₁₉K" },
-      { id: "2", name: "Sodyum - ₁₁Na" },
-      { id: "3", name: "Brom - ₃₅Br" },
+      { id: "2", name: "Brom - ₃₅Br" },
+      { id: "3", name: "Sodyum - ₁₁Na" },
       { id: "4", name: "Fosfor - ₁₅P" },
     ],
     targets: [
