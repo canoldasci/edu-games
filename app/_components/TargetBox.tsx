@@ -44,20 +44,10 @@ const TargetBox = ({
             />
           ) : state.item?.name ? (
             <span className="text-center text-md font-bold ">
-              {state.target.name === undefined && (
-                <span className="text-center font-bold text-medium rounded-full border-2 border-stone-200 p-1 bg-white text-gray-600">
-                  {state.target.correctItemId}
-                </span>
-              )}{" "}
               {state.item?.name}
             </span>
           ) : (
             <span className="text-center text-sm text-gray-600">
-              {state.target.name === undefined && (
-                <span className="text-center font-bold text-medium rounded-full border-2 border-stone-200 p-1 bg-white text-gray-600">
-                  {state.target.correctItemId}
-                </span>
-              )}{" "}
               Buraya sürükleyin
             </span>
           )}
