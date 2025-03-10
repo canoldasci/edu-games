@@ -9,7 +9,7 @@ const Playground = () => {
         <h2 className="font-medium text-gray-800 text-center mb-3 ">
           Atom numaraları verilen farklı atomların elektronegatiflik
           değerlerinin periyodik tablodaki konumu ile ilişkilendirilerek
-          sıralayınız
+          büyükten küçüğe sıralayınız
         </h2>
 
         <DragDropGame levels={levels} />
